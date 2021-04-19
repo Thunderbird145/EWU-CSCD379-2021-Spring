@@ -1,8 +1,12 @@
+@{
+    ViewBag.Title = "Users - Edit";
+}
+
 @model UserViewModel
 
 <form asp-controller="Users" asp-action="Edit" method="post">
     <input type="hidden" asp-for="Id" />
     @await Html.PartialAsync("_CreateOrEdit")
-    <button>Update</button>
-    <a asp-controller="Users" asp-action="Index">Cancel</a>
+    <button class="bg-green-500 hover:bg-green-200 text-white font-bold py-2 px-4 rounded">Save</button>
+    <a asp-controller="Users" asp-action="Index"><button class="bg-green-500 hover:bg-green-200 text-white font-bold py-2 px-4 rounded">Cancel</button></a>
 </form>
