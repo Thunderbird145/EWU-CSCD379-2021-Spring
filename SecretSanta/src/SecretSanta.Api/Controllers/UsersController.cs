@@ -27,9 +27,9 @@ namespace SecretSanta.Api.Controllers
 
         // /api/Users/<index>
         [HttpGet("{index}")] 
-        public string Get(int index)
+        public User? Get(int index)
         {
-            return "";
+            return UserManager.GetItem(index);
         }
 
         //DELETE /api/Users/<index>

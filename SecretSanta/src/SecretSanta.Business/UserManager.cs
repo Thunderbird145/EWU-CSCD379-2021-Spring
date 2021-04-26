@@ -13,7 +13,7 @@ namespace SecretSanta.Business {
 
         public User? GetItem(int id)
         {
-            throw new System.NotImplementedException();
+            return DeleteMe.Users[id];
         }
 
         public ICollection<User> List()
