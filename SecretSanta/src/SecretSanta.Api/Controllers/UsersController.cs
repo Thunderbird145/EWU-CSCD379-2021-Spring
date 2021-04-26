@@ -26,34 +26,60 @@ namespace SecretSanta.Api.Controllers
         }
 
         // /api/Users/<index>
-        [HttpGet("{index}")] 
-        public User? Get(int index)
+        [HttpGet("{id}")] 
+        public ActionResult<User?> Get(int id)
         {
-            return UserManager.GetItem(index);
+            if (id < 0)
+            {
+                return NotFound();
+            }
+            User? returnedUser = UserManager.GetItem(id);
+            return returnedUser;
         }
 
         //DELETE /api/Users/<index>
-        [HttpDelete("{index}")]
-        public ActionResult Delete(int index)
+        [HttpDelete("{id}")]
+        public ActionResult Delete(int id)
         {
-            if (index < 0) {
+            if (id < 0) {
                 return NotFound();
             }
-            DeleteMe.Users.RemoveAt(index);
-            return Ok();
+            if (UserManager.Remove(id)) {
+                return Ok();
+            }
+            return NotFound();
         }
 
         // POST /api/Users
         [HttpPost]
-        public void Post([FromBody] User user)
+        public ActionResult<User?> Post([FromBody] User? user)
         {
-            DeleteMe.Users.Add(user);
+            if (user is null) {
+                return BadRequest();
+            }
+            return UserManager.Create(user);
         }
 
         //PUT /api/Users/<index>
-        [HttpPut("{index}")]
-        public void Put(int index, [FromBody] User user) {
-            DeleteMe.Users[index] = user;
+        [HttpPut("{id}")]
+        public ActionResult Put(int id, [FromBody] User updatedUser) {
+            if (updatedUser is null) {
+                return BadRequest();
+            }
+            User? foundUser = UserManager.GetItem(id);
+            if (foundUser is not null) {
+                if (!string.IsNullOrWhiteSpace(updatedUser.FirstName)) {
+                    foundUser.FirstName = updatedUser.FirstName;
+                    foundUser.LastName = updatedUser.LastName;
+                }
+                if (!string.IsNullOrWhiteSpace(updatedUser.LastName)) {
+                    foundUser.LastName = updatedUser.LastName;
+                }
+
+                UserManager.Save(foundUser);
+                return Ok();
+            }
+            return NotFound();
         }
     }
 }

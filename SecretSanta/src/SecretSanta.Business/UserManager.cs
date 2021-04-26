@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using SecretSanta.Data;
 
 namespace SecretSanta.Business {
@@ -13,7 +14,10 @@ namespace SecretSanta.Business {
 
         public User? GetItem(int id)
         {
-            return DeleteMe.Users[id];
+            if (id < 0) {
+                throw new System.ArgumentOutOfRangeException(nameof(id));
+            }
+            return DeleteMe.Users.FirstOrDefault(x => x.Id == id);
         }
 
         public ICollection<User> List()
@@ -23,12 +27,18 @@ namespace SecretSanta.Business {
 
         public bool Remove(int id)
         {
-            throw new System.NotImplementedException();
+            User? foundUser = DeleteMe.Users.FirstOrDefault(x => x.Id == id);
+            if (foundUser is not null) {
+                DeleteMe.Users.Remove(foundUser);
+                return true;
+            }
+            return false;
         }
 
         public void Save(User item)
         {
-            throw new System.NotImplementedException();
+            Remove(item.Id);
+            Create(item);
         }
 
     }

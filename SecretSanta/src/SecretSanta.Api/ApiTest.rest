@@ -7,19 +7,27 @@
 GET {{host}}/api/users
 
 ###
-GET {{host}}/api/users/0
+GET {{host}}/api/users/2
 
 ###
-DELETE {{host}}/api/users/0
+DELETE {{host}}/api/users/1
 
 ###
 POST {{host}}/api/users
-Content-Type: application/json
+Content-Type: {{contentType}}
 
-"Aqua"
+{
+    "Id": 42,
+    "FirstName": "Aqua",
+    "LastName": "Minato"
+}
 
 ###
-PUT {{host}}/api/users/0
-Content-Type: application/json
+PUT {{host}}/api/users/3
+Content-Type: {{contentType}}
 
-"Marine"
+{
+    "Id": 3,
+    "FirstName": "Marine",
+    "LastName": "Houshou"
+}

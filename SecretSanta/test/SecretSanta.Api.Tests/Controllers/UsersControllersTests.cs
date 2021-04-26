@@ -4,6 +4,7 @@ using SecretSanta.Api.Controllers;
 using System.Collections.Generic;
 using SecretSanta.Business;
 using SecretSanta.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SecretSanta.Api.Tests.Controllers
 {
@@ -27,7 +28,7 @@ namespace SecretSanta.Api.Tests.Controllers
         [DataRow(98)]
         public void Get_WithId_ReturnsUserManagerUser(int id) {
             //Arrange
-            TestableUserManager manager = new();
+            UserManager manager = new();
             UsersController controller = new(manager);
             User expectedUser = new();
             manager.GetItemUser = expectedUser;
@@ -40,37 +41,5 @@ namespace SecretSanta.Api.Tests.Controllers
             Assert.AreEqual(expectedUser, result.Value);
         }
 
-        private class TestableUserManager : IUserRepository {
-        public User Create(User item)
-        {
-            DeleteMe.Users.Add(item);
-            return item;
-        }
-
-
-        public User? GetItemUser { get; set;}
-        public int GetItemId { get; set;}
-        public User? GetItem(int id)
-        {
-            GetItemId = id;
-            return GetItemUser;
-        }
-
-        public ICollection<User> List()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool Remove(int id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Save(User item)
-        {
-            throw new System.NotImplementedException();
-        }
-        }
     }
-
 }

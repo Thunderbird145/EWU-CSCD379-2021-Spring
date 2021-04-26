@@ -8,8 +8,8 @@ namespace SecretSanta.Data
         public static List<User> Users { get; } = new()
         {
             new User() {Id = 1, FirstName = "Kanata", LastName = "Amane"},
-            new User() {Id = 1, FirstName = "Marine", LastName = "Houshou"},
-            new User() {Id = 1, FirstName = "Coco", LastName = "Kiryu"}
+            new User() {Id = 2, FirstName = "Okayu", LastName = "Nekomata"},
+            new User() {Id = 3, FirstName = "Coco", LastName = "Kiryu"}
         };
     }
 }
