@@ -151,6 +151,7 @@ namespace SecretSanta.Api.Tests.Controllers
             UsersController controller = new(manager);
             User testUser = null;
             int id = 1;
+            
             //Act
             ActionResult<User?> result = controller.Put(id, testUser);
 
@@ -166,6 +167,7 @@ namespace SecretSanta.Api.Tests.Controllers
             TestableUserManager manager = new();
             UsersController controller = new(manager);
             User testUser = new User() {Id = id, FirstName = "Gawr", LastName = "Gura"};
+
             //Act
             ActionResult<User?> result = controller.Put(id, testUser);
 
