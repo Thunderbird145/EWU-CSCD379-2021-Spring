@@ -23,11 +23,11 @@ Content-Type: {{contentType}}
 }
 
 ###
-PUT {{host}}/api/users/3
+PUT {{host}}/api/users/42
 Content-Type: {{contentType}}
 
 {
-    "Id": 3,
+    "Id": 42,
     "FirstName": "Marine",
     "LastName": "Houshou"
 }
