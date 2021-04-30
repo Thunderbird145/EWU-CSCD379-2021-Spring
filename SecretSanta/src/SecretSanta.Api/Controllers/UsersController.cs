@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SecretSanta.Business;
 using SecretSanta.Data;
+using SecretSanta.Api.DTO;
 
 namespace SecretSanta.Api.Controllers
 {
@@ -53,9 +54,9 @@ namespace SecretSanta.Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] User? user)
+        public ActionResult Put(int id, [FromBody] UpdateUser? updateUser)
         {
-            if (user is null)
+            if (updateUser is null)
             {
                 return BadRequest();
             }
@@ -63,8 +64,8 @@ namespace SecretSanta.Api.Controllers
             User? foundUser = Repository.GetItem(id);
             if (foundUser is not null)
             {
-                foundUser.FirstName = user.FirstName ?? "";
-                foundUser.LastName = user.LastName ?? "";
+                foundUser.FirstName = updateUser.FirstName ?? "";
+                foundUser.LastName = updateUser.LastName ?? "";
 
                 Repository.Save(foundUser);
                 return Ok();
