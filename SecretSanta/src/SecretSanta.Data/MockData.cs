@@ -11,8 +11,8 @@ namespace SecretSanta.Data
                 new User
                 {
                     Id = 1,
-                    FirstName = "Inigo",
-                    LastName = "Montoya"
+                    FirstName = "Sora",
+                    LastName = "Tokino"
                 }
             },
             {
@@ -20,8 +20,8 @@ namespace SecretSanta.Data
                 new User
                 {
                     Id = 2,
-                    FirstName = "Princess",
-                    LastName = "Buttercup"
+                    FirstName = "Robocco",
+                    LastName = "5452432"
                 }
             },
             {
@@ -29,8 +29,8 @@ namespace SecretSanta.Data
                 new User
                 {
                     Id = 3,
-                    FirstName = "Prince",
-                    LastName = "Humperdink"
+                    FirstName = "Miko",
+                    LastName = "Sakura"
                 }
             },
             {
@@ -38,8 +38,8 @@ namespace SecretSanta.Data
                 new User
                 {
                     Id = 4,
-                    FirstName = "Count",
-                    LastName = "Rugen"
+                    FirstName = "Suisei",
+                    LastName = "Hoshimachi"
                 }
             },
             {
@@ -47,8 +47,8 @@ namespace SecretSanta.Data
                 new User
                 {
                     Id = 5,
-                    FirstName = "Miracle",
-                    LastName = "Max"
+                    FirstName = "Yozora",
+                    LastName = "Mel"
                 }
             }
         };

@@ -20,20 +20,37 @@ namespace SecretSanta.Api.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<User> Get()
+        
+        public IEnumerable<FullUser> Get()
         {
-            return Repository.List();
+            List<FullUser> users = new List<FullUser>();
+            foreach(User u in Repository.List()) {
+                users.Add(new FullUser
+                {
+                    Id = u.Id,
+                    FirstName = u.FirstName,
+                    LastName = u.LastName
+                });
+            }
+            return users;
         }
 
         [HttpGet("{id}")]
-        public ActionResult<User?> Get(int id)
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public ActionResult<NameUser?> Get(int id)
         {
             User? user = Repository.GetItem(id);
             if (user is null) return NotFound();
-            return user;
+            NameUser nameUser = new NameUser();
+            nameUser.FirstName = user.FirstName;
+            nameUser.LastName = user.LastName;
+            return nameUser;
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public ActionResult Delete(int id)
         {
             if (Repository.Remove(id))
@@ -44,17 +61,27 @@ namespace SecretSanta.Api.Controllers
         }
 
         [HttpPost]
-        public ActionResult<User?> Post([FromBody] User? user)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(FullUser), StatusCodes.Status200OK)]
+        public ActionResult<FullUser?> Post([FromBody] FullUser? fUser)
         {
-            if (user is null)
+            if (fUser is null)
             {
                 return BadRequest();
             }
-            return Repository.Create(user);
+            User user = new User();
+            user.Id = fUser.Id;
+            user.FirstName = fUser.FirstName;
+            user.LastName = fUser.LastName;
+            Repository.Create(user);
+            return fUser;
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] UpdateUser? updateUser)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public ActionResult Put(int id, [FromBody] NameUser? updateUser)
         {
             if (updateUser is null)
             {
