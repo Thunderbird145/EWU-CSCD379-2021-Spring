@@ -36,31 +36,45 @@ namespace SecretSanta.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(UserViewModel viewModel)
+        public async Task<IActionResult> Create(UserViewModel viewModel)
         {
+            FullUser createdUser = new FullUser {
+                    Id = viewModel.Id,
+                    FirstName = viewModel.FirstName,
+                    LastName = viewModel.LastName,
+                };
             if (ModelState.IsValid)
             {
-                MockData.Users.Add(viewModel);
+                await Client.PostAsync(createdUser);
                 return RedirectToAction(nameof(Index));
             }
 
             return View(viewModel);
         }
 
-        public IActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-            return View(MockData.Users[id]);
+            FullUser fUser = await Client.GetAsync(id);
+            UserViewModel viewModel = new UserViewModel {
+                Id = fUser.Id,
+                FirstName = fUser.FirstName,
+                LastName = fUser.LastName,
+            };
+            return View(viewModel);
         }
 
         [HttpPost]
-        public IActionResult Edit(UserViewModel viewModel)
+        public async Task<IActionResult> Edit(UserViewModel viewModel)
         {
+            NameUser fUser = new NameUser {
+                FirstName = viewModel.FirstName,
+                LastName = viewModel.LastName,
+            };
             if (ModelState.IsValid)
             {
-                MockData.Users[viewModel.Id] = viewModel;
+                await Client.PutAsync(viewModel.Id, fUser);
                 return RedirectToAction(nameof(Index));
             }
-
             return View(viewModel);
         }
 

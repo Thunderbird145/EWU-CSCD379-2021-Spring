@@ -37,15 +37,16 @@ namespace SecretSanta.Api.Controllers
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult<NameUser?> Get(int id)
+        [ProducesResponseType(typeof(FullUser), StatusCodes.Status200OK)]
+        public ActionResult<FullUser?> Get(int id)
         {
             User? user = Repository.GetItem(id);
             if (user is null) return NotFound();
-            NameUser nameUser = new NameUser();
-            nameUser.FirstName = user.FirstName;
-            nameUser.LastName = user.LastName;
-            return nameUser;
+            FullUser fullUser = new FullUser();
+            fullUser.Id = user.Id;
+            fullUser.FirstName = user.FirstName;
+            fullUser.LastName = user.LastName;
+            return fullUser;
         }
 
         [HttpDelete("{id}")]
