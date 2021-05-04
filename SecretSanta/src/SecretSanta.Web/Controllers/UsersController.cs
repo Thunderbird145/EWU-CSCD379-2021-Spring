@@ -38,25 +38,18 @@ namespace SecretSanta.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(UserViewModel viewModel)
         {
-            try
+            FullUser createdUser = new FullUser {
+                    Id = viewModel.Id,
+                    FirstName = viewModel.FirstName,
+                    LastName = viewModel.LastName,
+                };
+            if (ModelState.IsValid)
             {
-                FullUser createdUser = new FullUser {
-                        Id = viewModel.Id,
-                        FirstName = viewModel.FirstName,
-                        LastName = viewModel.LastName,
-                    };
-                if (ModelState.IsValid)
-                {
-                    await Client.PostAsync(createdUser);
-                    return RedirectToAction(nameof(Index));
-                }
+                await Client.PostAsync(createdUser);
+                return RedirectToAction(nameof(Index));
+            }
 
-                return View(viewModel);
-            }
-            catch(Exception e)
-            { //<-- Breakpoint here
-                return View(viewModel);
-            }
+            return View(viewModel);
         }
 
         public async Task<IActionResult> Edit(int id)
@@ -86,7 +79,7 @@ namespace SecretSanta.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> DeleteAsync(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             await Client.DeleteAsync(id);
             return RedirectToAction(nameof(Index));

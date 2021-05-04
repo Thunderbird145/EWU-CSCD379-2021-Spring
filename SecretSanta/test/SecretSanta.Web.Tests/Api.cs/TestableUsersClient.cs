@@ -8,17 +8,22 @@ namespace SecretSanta.Web.Tests.Api {
 
     public class TestableUsersClient : IUsersClient
     {
+        public List<int> DeleteUserReturnValue {get; set;} = new();
+        public int DeleteInvocationCount {get; set;}
         public Task DeleteAsync(int id)
         { 
-            throw new System.NotImplementedException();
+            DeleteInvocationCount++;
+            DeleteUserReturnValue.Remove(id);
+            return Task.FromResult<ICollection<int>?>(DeleteUserReturnValue);
         }
+
 
         public Task DeleteAsync(int id, CancellationToken cancellationToken)
         {
             throw new System.NotImplementedException();
         }
 
-        public List<FullUser>? GetAllUsersReturnValue {get; set;}
+        public List<FullUser>? GetAllUsersReturnValue {get; set;} = new();
         public int GetAllAsyncInvocationCount {get; set;}
         public Task<ICollection<FullUser>?> GetAllAsync()
         {
@@ -43,6 +48,7 @@ namespace SecretSanta.Web.Tests.Api {
 
         public int PostAsyncInvocationCount {get; set;}
         public List<FullUser> PostAsyncInvokedParameters {get; } = new();
+
         public Task<FullUser> PostAsync(FullUser fUser)
         {
             PostAsyncInvocationCount++;
@@ -55,9 +61,17 @@ namespace SecretSanta.Web.Tests.Api {
             throw new System.NotImplementedException();
         }
 
+
+        public int PutAsyncInvocationCount { get; set; }
+        public List<NameUser> PutAsyncInvokedParameters { get; set; } = new();
         public Task PutAsync(int id, NameUser updateUser)
         {
-            throw new System.NotImplementedException();
+            PutAsyncInvocationCount++;
+
+            PutAsyncInvokedParameters[id].FirstName = updateUser.FirstName;
+            PutAsyncInvokedParameters[id].LastName = updateUser.LastName;
+
+            return Task.FromResult<ICollection<NameUser>?>(PutAsyncInvokedParameters);
         }
 
         public Task PutAsync(int id, NameUser updateUser, CancellationToken cancellationToken)
