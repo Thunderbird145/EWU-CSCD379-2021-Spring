@@ -39,6 +39,8 @@ namespace SecretSanta.Web.Tests.Controller
             Assert.AreEqual(1, usersClient.GetAllAsyncInvocationCount);
         }
 
+        //add create withoutvalidmodel
+
         [TestMethod]
         public async Task Create_WithValidModel_InvokesPostAsync() {
             //Arrange
@@ -64,7 +66,28 @@ namespace SecretSanta.Web.Tests.Controller
 
         }
 
-        
+        [TestMethod]
+        public async Task Create_WithInvalidModel_DoesNotInvokePostAsync() {
+            //Arrange
+            TestableUsersClient usersClient = Factory.Client;
+            HttpClient client = Factory.CreateClient();
+
+            Dictionary<string, string?> values = new()
+            {
+                { nameof(UserViewModel.Id), "refrigerator"}
+            };
+            FormUrlEncodedContent content = new(values!);
+
+            //Act
+            HttpResponseMessage response = await client.PostAsync("/Users/Create", content);
+
+            //Assert
+            response.EnsureSuccessStatusCode();
+            Assert.AreEqual(0, usersClient.PostAsyncInvocationCount);
+            Assert.AreEqual(0, usersClient.PostAsyncInvokedParameters.Count);
+
+        }
+
         [TestMethod]
         public async Task Delete_WithValidDelete_InvokesDeleteAsync()
         {
@@ -95,7 +118,7 @@ namespace SecretSanta.Web.Tests.Controller
         }
 
         [TestMethod]
-        public async Task Edit_WithValidModel_InvokesPostAsync() {
+        public async Task Edit_WithValidModel_InvokesPutAsync() {
             //Arrange
             TestableUsersClient usersClient = Factory.Client;
             HttpClient client = Factory.CreateClient();
@@ -122,6 +145,36 @@ namespace SecretSanta.Web.Tests.Controller
             Assert.AreEqual(1, usersClient.PutAsyncInvocationCount);
             Assert.AreEqual("Watame", usersClient.PutAsyncInvokedParameters[1].FirstName);
             Assert.AreEqual("Tsunomaki", usersClient.PutAsyncInvokedParameters[1].LastName);
+        }
+
+        [TestMethod]
+        public async Task Edit_WithInvalidModel_DoesNotInvokePutAsync() {
+            //Arrange
+            TestableUsersClient usersClient = Factory.Client;
+            HttpClient client = Factory.CreateClient();
+
+            NameUser user1 = new() {FirstName = "Kanata", LastName = "Amane"};
+            NameUser user2 = new() {FirstName = "Coco", LastName = "Kiryu"};
+
+            usersClient.PutAsyncInvokedParameters.Add(user1);
+            usersClient.PutAsyncInvokedParameters.Add(user2);
+
+            Dictionary<string, string?> values = new()
+            {
+                { nameof(UserViewModel.Id), "Yagoo"},
+                { nameof(UserViewModel.FirstName),  null},
+                { nameof(UserViewModel.LastName), null}
+            };
+            FormUrlEncodedContent content = new(values!);
+
+            //Act
+            HttpResponseMessage response = await client.PostAsync("/Users/Edit", content);
+
+            //Assert
+            response.EnsureSuccessStatusCode();
+            Assert.AreEqual(0, usersClient.PutAsyncInvocationCount);
+            Assert.AreEqual("Coco", usersClient.PutAsyncInvokedParameters[1].FirstName);
+            Assert.AreEqual("Kiryu", usersClient.PutAsyncInvokedParameters[1].LastName);
         }
     }
 }
