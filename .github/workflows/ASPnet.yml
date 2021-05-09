@@ -1,4 +1,4 @@
-name: .NET
+name: ASPCI.NET
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
   build:
     defaults:
       run:
-        working-directory: ./UserGroup/
+        working-directory: ./SecretSanta/
     runs-on: ubuntu-latest
 
     steps:
@@ -19,11 +19,21 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
+
     - name: Get Directory
       run: pwd
+
+    - name: Run Npm Build
+      working-directory: ./SecretSanta/src/SecretSanta.Web/
+      run: |
+        npm install
+        npm run build:prod
+
     - name: Restore dependencies
       run: dotnet restore
+
     - name: Build
       run: dotnet build --no-restore
+      
     - name: Test
       run: dotnet test --no-build --verbosity normal
