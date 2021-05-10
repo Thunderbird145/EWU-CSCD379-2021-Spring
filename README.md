@@ -1,7 +1,10 @@
 ﻿# EWU-CSCD379-2021-Spring
 
-![](../../workflows/ASPCI.NET/badge.svg
+Build and Test
+![](../../workflows/Build and Test/badge.svg)
 
+Deploy on Azure
+![](../../workflows/Deployment/badge.svg)
 
 # Assignment 6
 
