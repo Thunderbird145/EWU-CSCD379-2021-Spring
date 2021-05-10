@@ -1,6 +1,6 @@
 ﻿# EWU-CSCD379-2021-Spring
 
-![](../../workflows/ASPnet.NET/badge.svg
+![](../../workflows/ASPCI.NET/badge.svg
 
 
 # Assignment 6
