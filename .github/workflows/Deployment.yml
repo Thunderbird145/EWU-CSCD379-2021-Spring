@@ -39,7 +39,7 @@ jobs:
       run: dotnet build --no-restore --configuration Release
 
     - name: dotnet publish
-      working-directory: ./UserGroup/src/UserGroup.Web/
+      working-directory: ./SecretSanta/src/SecretSanta.Web/
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/binSecretSanta
 
     - name: Run Azure webapp deploy action using publish profile credentials

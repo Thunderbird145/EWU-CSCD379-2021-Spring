@@ -1,7 +1,7 @@
 ﻿# EWU-CSCD379-2021-Spring
 
 Build and Test
-![](../../workflows/Build and Test/badge.svg)
+![](../../workflows/BuildAndTest/badge.svg)
 
 Deploy on Azure
 ![](../../workflows/Deployment/badge.svg)
