@@ -75,7 +75,7 @@ namespace SecretSanta.Web.Tests
             await page.ScreenshotAsync("gifts.png");
         }
 
-                [TestMethod]
+        [TestMethod]
         public async Task NavigateToGroups()
         {
             var localhost = Server.WebRootUri.AbsoluteUri.Replace("127.0.0.1", "localhost");
@@ -95,43 +95,8 @@ namespace SecretSanta.Web.Tests
             await page.ScreenshotAsync("groups.png");
         }
 
-/*         [TestMethod]
-        public async Task CreateSpeaker()
-        {
-            var localhost = Server.WebRootUri.AbsoluteUri.Replace("127.0.0.1", "localhost");
-            using var playwright = await Playwright.CreateAsync();
-            await using var browser = await playwright.Chromium.LaunchAsync(new LaunchOptions
-            {
-                Headless = true
-            });
-
-            var page = await browser.NewPageAsync();
-            var response = await page.GoToAsync(localhost);
-
-            Assert.IsTrue(response.Ok);
-
-            await page.ClickAsync("text=");
-
-            // make sure we have 10 speakers here
-            var speakers = await page.QuerySelectorAllAsync("body > section > section");
-            Assert.AreEqual(10, speakers.Count());
-
-            await page.ClickAsync("text=Create");
-
-            await page.TypeAsync("input#FirstName", "Michael");
-            await page.TypeAsync("input#LastName", "Stokesbary");
-            await page.TypeAsync("input#EmailAddress", "mike@stokesbary.me");
-
-            await page.ClickAsync("text=Create");
-
-            // make sure we have 10 + 1 speakers here
-            speakers = await page.QuerySelectorAllAsync("body > section > section");
-            Assert.AreEqual(11, speakers.Count());
-        } */
-/* 
         [TestMethod]
-        public async Task DeleteSpeaker()
-        {
+        public async Task CreateGift() {
             var localhost = Server.WebRootUri.AbsoluteUri.Replace("127.0.0.1", "localhost");
             using var playwright = await Playwright.CreateAsync();
             await using var browser = await playwright.Chromium.LaunchAsync(new LaunchOptions
@@ -144,43 +109,97 @@ namespace SecretSanta.Web.Tests
 
             Assert.IsTrue(response.Ok);
 
-            await page.ClickAsync("text=Users");
+            await page.ClickAsync("text=Gifts");
+
+            var gifts = await page.QuerySelectorAllAsync("body > section > section > section");
+            int giftCount = gifts.Count();
+
+            await page.ClickAsync("text=Create");
+
+            await page.TypeAsync("input#Title", "New Purse");
+            await page.TypeAsync("input#Description", "A nice new purse to hold all of my rat poison");
+            await page.TypeAsync("input#Url", "https://amazon.com");
+            await page.TypeAsync("input#Priority", "1");
+            await page.SelectOptionAsync("select#UserId", "1");
+
+            await page.ClickAsync("text=Create");
+
+            gifts = await page.QuerySelectorAllAsync("body > section > section > section");
+            Assert.AreEqual(giftCount + 1, gifts.Count());
+
+            await page.ScreenshotAsync("create a gift.png");
+        }
+
+        [TestMethod]
+        public async Task EditGift() {
+            var localhost = Server.WebRootUri.AbsoluteUri.Replace("127.0.0.1", "localhost");
+            using var playwright = await Playwright.CreateAsync();
+            await using var browser = await playwright.Chromium.LaunchAsync(new LaunchOptions
+            {
+                Headless = true
+            });
+
+            var page = await browser.NewPageAsync();
+            var response = await page.GoToAsync(localhost);
+
+            Assert.IsTrue(response.Ok);
+
+            await page.ClickAsync("text=Gifts");
+
+            await page.ClickAsync("text=Rat Poison");
+
+            await page.ScreenshotAsync("edit a gift.png");
+            
+            await page.ClickAsync("input#Title", clickCount: 3);
+            await page.TypeAsync("input#Title", "Different Rat Poison");
+
+            await page.ClickAsync("input#Description", clickCount: 3);
+            await page.TypeAsync("input#Description", "Could kill 30 rats");
+
+            await page.ClickAsync("input#Url", clickCount: 3);
+            await page.TypeAsync("input#Url", "https://RatPoisonSurpluss.com");
+
+            await page.ClickAsync("input#Priority", clickCount: 3);
+            await page.TypeAsync("input#Priority", "1");
+
+            await page.SelectOptionAsync("select#UserId", "1");
+
+            await page.ScreenshotAsync("editted a gift.png");
+
+            await page.ClickAsync("text=Update");
+
+            Assert.AreEqual("Different Rat Poison", await page.GetTextContentAsync("body > section > section > section:first-child > a > section > div "));
+        }
+
+        [TestMethod]
+        public async Task DeleteGift()
+        {
+            var localhost = Server.WebRootUri.AbsoluteUri.Replace("127.0.0.1", "localhost");
+            using var playwright = await Playwright.CreateAsync();
+            await using var browser = await playwright.Chromium.LaunchAsync(new LaunchOptions
+            {
+                Headless = false,
+                SlowMo = 120
+            });
+
+            var page = await browser.NewPageAsync();
+            var response = await page.GoToAsync(localhost);
+
+            Assert.IsTrue(response.Ok);
+
+            await page.ClickAsync("text=Gifts");
 
             // make sure we have 10 + 1 speakers here
-            var speakers = await page.QuerySelectorAllAsync("body > section > section");
-            Assert.AreEqual(11, speakers.Count());
+            var gifts = await page.QuerySelectorAllAsync("body > section > section > section");
+            int giftCount = gifts.Count();
 
             page.Dialog += (_, args) => args.Dialog.AcceptAsync();
 
-            await page.ClickAsync("body > section > section:last-child > form > button");
+            await page.ClickAsync("body > section > section > section:first-child > a > section form > button");
 
             // make sure we have 10 speakers here
-            speakers = await page.QuerySelectorAllAsync("body > section > section");
-            Assert.AreEqual(10, speakers.Count());
-        } */
-/* 
-        [TestMethod]
-        public async Task ValidateLastSpeakerText()
-        {
-            var localhost = Server.WebRootUri.AbsoluteUri.Replace("127.0.0.1", "localhost");
-            using var playwright = await Playwright.CreateAsync();
-            await using var browser = await playwright.Chromium.LaunchAsync(new LaunchOptions
-            {
-                Headless = true
-            });
-
-            var page = await browser.NewPageAsync();
-            var response = await page.GoToAsync(localhost);
-
-            Assert.IsTrue(response.Ok);
-
-            await page.ClickAsync("text=Users");
-
-            var sectionText = await page.GetTextContentAsync("body > section > section:last-child");
-
-            Assert.IsTrue(sectionText.Contains("Princess Buttercup"));
-        } */
-
-
+            gifts = await page.QuerySelectorAllAsync("body > section > section > section");
+            Assert.AreEqual(giftCount - 1, gifts.Count());
+        }
     }
 }
