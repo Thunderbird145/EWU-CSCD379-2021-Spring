@@ -58,7 +58,6 @@ namespace SecretSanta.Web.Tests
 
         protected virtual string StartAndGetWebRootUri()
         {
-            // As the port is generated automatically, we can use IServerAddressesFeature to get the actual server URL
             WebHost = CreateWebHost();
             RunInBackgroundThread(WebHost.Start);
             return WebHost.Services.GetRequiredService<IServer>().Features
@@ -68,7 +67,6 @@ namespace SecretSanta.Web.Tests
 
         protected virtual string StartAndGetApiRootUri()
         {
-            // As the port is generated automatically, we can use IServerAddressesFeature to get the actual server URL
             ApiHost = CreateApiHost();
             RunInBackgroundThread(ApiHost.Start);
             return ApiHost.Services.GetRequiredService<IServer>().Features
@@ -97,7 +95,6 @@ namespace SecretSanta.Web.Tests
             return new HostBuilder()
                 .ConfigureHostConfiguration(config =>
                 {
-                    // Make UseStaticWebAssets work
                     var applicationPath = typeof(WStartup).Assembly.Location;
                     var applicationDirectory = Path.GetDirectoryName(applicationPath);
                     var name = Path.ChangeExtension(applicationPath, ".StaticWebAssets.xml");
@@ -115,7 +112,7 @@ namespace SecretSanta.Web.Tests
                     .UseStaticWebAssets()
                     .UseStartup<WStartup>()
                     .UseSetting("ApiHost", ApiRootUri.AbsoluteUri.Replace("127.0.0.1", "localhost"))
-                    .UseUrls($"https://127.0.0.1:0")) // :0 allows to choose a port automatically
+                    .UseUrls($"https://127.0.0.1:0"))
                 .Build();
         }
 
@@ -124,7 +121,6 @@ namespace SecretSanta.Web.Tests
             return new HostBuilder()
                 .ConfigureHostConfiguration(config =>
                 {
-                    // Make UseStaticWebAssets work
                     var applicationPath = typeof(AStartup).Assembly.Location;
                     var applicationDirectory = Path.GetDirectoryName(applicationPath);
                     var name = Path.ChangeExtension(applicationPath, ".StaticWebAssets.xml");
@@ -141,7 +137,7 @@ namespace SecretSanta.Web.Tests
                     .UseSolutionRelativeContentRoot(Path.Combine("src", typeof(AStartup).Assembly.GetName().Name))
                     .UseStaticWebAssets()
                     .UseStartup<AStartup>()
-                    .UseUrls($"https://127.0.0.1:0")) // :0 allows to choose a port automatically
+                    .UseUrls($"https://127.0.0.1:0"))
                 .Build();
         }
     }
