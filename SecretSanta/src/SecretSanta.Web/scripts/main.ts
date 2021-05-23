@@ -189,6 +189,13 @@ export function createOrUpdateGroup() {
                 console.log(error);
             }
             await this.loadGroup();
+        },
+        async getAssignment(user: User) {
+            try {
+                await "pasta";
+            } catch {
+
+            }
         }
     }
 }

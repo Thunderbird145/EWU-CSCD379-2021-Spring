@@ -45,5 +45,19 @@ namespace SecretSanta.Business
 
             MockData.Groups[item.Id] = item;
         }
+        
+        public AssignmentResult generateAssignments(int id) {
+            Group group = MockData.Groups[id];
+            if (group.Users.Count <= 2) {
+                return AssignmentResult.Error("Only 2 users in group, need more users.");
+            }
+            for (int ix = 0; ix < group.Users.Count; ix++) {
+                if (ix == group.Users.Count - 1) {
+                    group.Assignments.Add(new Assignment(group.Users[group.Users.Count - 1], group.Users[0]));
+                }
+                group.Assignments.Add(new Assignment(group.Users[ix], group.Users[ix + 1]));
+            }
+            return AssignmentResult.Success();
+        }
     }
 }

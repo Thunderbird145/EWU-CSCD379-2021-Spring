@@ -109,5 +109,18 @@ namespace SecretSanta.Api.Controllers
             }
             return NotFound();
         }
+
+        [HttpPut("{id}/generate")]
+        public ActionResult<AssignmentResult> Generate(int id)
+        {
+            if (GroupRepository.GetItem(id) is not null) {
+                var result = GroupRepository.generateAssignments(id);
+                if (result.IsSuccess) {
+                    return Ok();
+                }
+                return BadRequest();
+            }
+            return NotFound();
+        }
     }
 }

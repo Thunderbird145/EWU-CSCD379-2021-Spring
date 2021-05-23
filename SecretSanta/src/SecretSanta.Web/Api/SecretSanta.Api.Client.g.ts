@@ -17,6 +17,7 @@ export interface IGroupsClient {
     put(id: number, group: UpdateGroup): Promise<void>;
     remove(id: number, userId: number): Promise<void>;
     add(id: number, userId: number): Promise<void>;
+    generate(id: number): Promise<AssignmentResult>;
 }
 
 export class GroupsClient implements IGroupsClient {
@@ -426,6 +427,56 @@ export class GroupsClient implements IGroupsClient {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
         }
         return Promise.resolve<void>(<any>null);
+    }
+
+    generate(id: number , cancelToken?: CancelToken | undefined): Promise<AssignmentResult> {
+        let url_ = this.baseUrl + "/api/Groups/{id}/generate";
+        if (id === undefined || id === null)
+            throw new Error("The parameter 'id' must be defined.");
+        url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ = <AxiosRequestConfig>{
+            method: "PUT",
+            url: url_,
+            headers: {
+                "Accept": "application/json"
+            },
+            cancelToken
+        };
+
+        return this.instance.request(options_).catch((_error: any) => {
+            if (isAxiosError(_error) && _error.response) {
+                return _error.response;
+            } else {
+                throw _error;
+            }
+        }).then((_response: AxiosResponse) => {
+            return this.processGenerate(_response);
+        });
+    }
+
+    protected processGenerate(response: AxiosResponse): Promise<AssignmentResult> {
+        const status = response.status;
+        let _headers: any = {};
+        if (response.headers && typeof response.headers === "object") {
+            for (let k in response.headers) {
+                if (response.headers.hasOwnProperty(k)) {
+                    _headers[k] = response.headers[k];
+                }
+            }
+        }
+        if (status === 200) {
+            const _responseText = response.data;
+            let result200: any = null;
+            let resultData200  = _responseText;
+            result200 = AssignmentResult.fromJS(resultData200);
+            return result200;
+        } else if (status !== 200 && status !== 204) {
+            const _responseText = response.data;
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        }
+        return Promise.resolve<AssignmentResult>(<any>null);
     }
 }
 
@@ -977,6 +1028,46 @@ export class UpdateGroup implements IUpdateGroup {
 
 export interface IUpdateGroup {
     name?: string | undefined;
+}
+
+export class AssignmentResult implements IAssignmentResult {
+    isSuccess!: boolean;
+    errorMessage?: string | undefined;
+
+    constructor(data?: IAssignmentResult) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.isSuccess = _data["isSuccess"];
+            this.errorMessage = _data["errorMessage"];
+        }
+    }
+
+    static fromJS(data: any): AssignmentResult {
+        data = typeof data === 'object' ? data : {};
+        let result = new AssignmentResult();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["isSuccess"] = this.isSuccess;
+        data["errorMessage"] = this.errorMessage;
+        return data; 
+    }
+}
+
+export interface IAssignmentResult {
+    isSuccess: boolean;
+    errorMessage?: string | undefined;
 }
 
 export class UpdateUser implements IUpdateUser {
