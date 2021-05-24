@@ -111,16 +111,27 @@ namespace SecretSanta.Api.Controllers
         }
 
         [HttpPut("{id}/generate")]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
         public ActionResult<AssignmentResult> Generate(int id)
         {
             if (GroupRepository.GetItem(id) is not null) {
-                var result = GroupRepository.generateAssignments(id);
+                var result = GroupRepository.GenerateAssignments(id);
                 if (result.IsSuccess) {
                     return Ok();
                 }
                 return BadRequest();
             }
             return NotFound();
+        }
+
+        [HttpGet("{id}/{userID}")]
+        public ActionResult<Dto.User> GetAssignment(int id, int user) {
+            if (GroupRepository.GetItem(id) is not null) {
+                Data.User result = GroupRepository.getAssignment(id, user);
+            }
+            return Ok();
         }
     }
 }

@@ -46,7 +46,7 @@ namespace SecretSanta.Business
             MockData.Groups[item.Id] = item;
         }
         
-        public AssignmentResult generateAssignments(int id) {
+        public AssignmentResult GenerateAssignments(int id) {
             Group group = MockData.Groups[id];
             if (group.Users.Count <= 2) {
                 return AssignmentResult.Error("Only 2 users in group, need more users.");
@@ -58,6 +58,17 @@ namespace SecretSanta.Business
                 group.Assignments.Add(new Assignment(group.Users[ix], group.Users[ix + 1]));
             }
             return AssignmentResult.Success();
+        }
+
+        public User? GetAssignment(int id, int userId)
+        {
+            Group group = MockData.Groups[id];
+            foreach (Assignment assignment in group.Assignments) {
+                if (assignment.Giver.Id == userId) {
+                    return assignment.Receiver;
+                }
+            }
+            return null;
         }
     }
 }

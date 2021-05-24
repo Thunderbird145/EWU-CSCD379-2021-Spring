@@ -192,7 +192,7 @@ export function createOrUpdateGroup() {
         },
         async getAssignment(user: User) {
             try {
-                await "pasta";
+                var client = new GroupsClient(apiHost);
             } catch {
 
             }
