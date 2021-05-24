@@ -11,7 +11,6 @@ namespace SecretSanta.Business
         Group Create(Group item);
         void Save(Group item);
         AssignmentResult GenerateAssignments(int id);
-        User getAssignment(int id, int userID);
     }
 
 }

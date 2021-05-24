@@ -13,7 +13,7 @@ import { Group, GroupsClient, User, UsersClient } from '../Api/SecretSanta.Api.C
 library.add(fas, far, fab);
 dom.watch();
 
-declare var apiHost : string;
+declare var apiHost: string;
 
 export function setupNav() {
     return {
@@ -61,7 +61,7 @@ export function createOrUpdateUser() {
             try {
                 const client = new UsersClient(apiHost);
                 await client.post(this.user);
-                window.location.href='/users';
+                window.location.href = '/users';
             } catch (error) {
                 console.log(error);
             }
@@ -70,7 +70,7 @@ export function createOrUpdateUser() {
             try {
                 const client = new UsersClient(apiHost);
                 await client.put(this.user.id, this.user);
-                window.location.href='/users';
+                window.location.href = '/users';
             } catch (error) {
                 console.log(error);
             }
@@ -117,6 +117,7 @@ export function createOrUpdateGroup() {
     return {
         group: {} as Group,
         allUsers: [] as User[],
+        assignedUsers: [] as User[],
         selectedUserId: 0,
         isEditing: false,
         generationError: "",
@@ -153,9 +154,13 @@ export function createOrUpdateGroup() {
             try {
                 const client = new GroupsClient(apiHost);
                 this.group = await client.get(+id);
+                this.group.users.forEach((u) => this.loadAssignments(u));
             } catch (error) {
                 console.log(error);
             }
+        },
+        loadAssignments(user: User) {
+            this.assignedUsers[user.id] = user;
         },
         async loadUsers() {
             try {
@@ -190,12 +195,14 @@ export function createOrUpdateGroup() {
             }
             await this.loadGroup();
         },
-        async getAssignment(user: User) {
+        async generateAssignments(currentGroupId: number) {
             try {
                 var client = new GroupsClient(apiHost);
-            } catch {
-
+                await client.generate(currentGroupId);
+            } catch (error) {
+                console.log(error);
             }
+            await this.loadData();
         }
     }
 }

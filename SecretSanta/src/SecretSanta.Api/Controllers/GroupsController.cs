@@ -125,13 +125,6 @@ namespace SecretSanta.Api.Controllers
             }
             return NotFound();
         }
-
-        [HttpGet("{id}/{userID}")]
-        public ActionResult<Dto.User> GetAssignment(int id, int user) {
-            if (GroupRepository.GetItem(id) is not null) {
-                Data.User result = GroupRepository.getAssignment(id, user);
-            }
-            return Ok();
-        }
+        
     }
 }

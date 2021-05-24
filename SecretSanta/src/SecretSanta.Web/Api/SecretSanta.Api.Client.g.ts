@@ -466,7 +466,19 @@ export class GroupsClient implements IGroupsClient {
                 }
             }
         }
-        if (status === 200) {
+        if (status === 400) {
+            const _responseText = response.data;
+            let result400: any = null;
+            let resultData400  = _responseText;
+            result400 = ProblemDetails.fromJS(resultData400);
+            return throwException("A server side error occurred.", status, _responseText, _headers, result400);
+        } else if (status === 404) {
+            const _responseText = response.data;
+            let result404: any = null;
+            let resultData404  = _responseText;
+            result404 = ProblemDetails.fromJS(resultData404);
+            return throwException("A server side error occurred.", status, _responseText, _headers, result404);
+        } else if (status === 200) {
             const _responseText = response.data;
             let result200: any = null;
             let resultData200  = _responseText;
