@@ -120,6 +120,7 @@ export function createOrUpdateGroup() {
         assignedUsers: [] as User[],
         selectedUserId: 0,
         isEditing: false,
+        isAssigned: false,
         generationError: "",
 
         async create() {
@@ -154,13 +155,30 @@ export function createOrUpdateGroup() {
             try {
                 const client = new GroupsClient(apiHost);
                 this.group = await client.get(+id);
+                try {
+
+                } catch {}
                 this.group.users.forEach((u) => this.loadAssignments(u));
             } catch (error) {
                 console.log(error);
             }
         },
         loadAssignments(user: User) {
-            this.assignedUsers[user.id] = user;
+            if (this.group.assignments.length == this.group.users.length && this.isAssigned) {
+                this.group.assignments.forEach((A) => {
+                    if (A.giver?.id == user.id) {
+                        this.assignedUsers[user.id] = new User();
+                        this.assignedUsers[user.id].id = 0;
+                        this.assignedUsers[user.id].firstName = A.receiver?.firstName;
+                        this.assignedUsers[user.id].lastName = A.receiver?.lastName;
+                    }
+                });
+            } else {
+                this.assignedUsers[user.id] = new User();
+                this.assignedUsers[user.id].id = 0;
+                this.assignedUsers[user.id].firstName = "not yet assigned";
+                this.assignedUsers[user.id].lastName = "";
+            }
         },
         async loadUsers() {
             try {
@@ -178,6 +196,7 @@ export function createOrUpdateGroup() {
             if (confirm(`Are you sure you want to remove ${user.firstName} ${user.lastName} from ${currentGroup.name}?`)) {
                 try {
                     var client = new GroupsClient(apiHost);
+                    this.isAssigned = false;
                     await client.remove(currentGroup.id, user.id);
                 } catch (error) {
                     console.log(error);
@@ -189,6 +208,7 @@ export function createOrUpdateGroup() {
             if (this.selectedUserId <= 0) return;
             try {
                 var client = new GroupsClient(apiHost);
+                this.isAssigned = false;
                 await client.add(currentGroupId, this.selectedUserId);
             } catch (error) {
                 console.log(error);
@@ -199,6 +219,7 @@ export function createOrUpdateGroup() {
             try {
                 var client = new GroupsClient(apiHost);
                 await client.generate(currentGroupId);
+                this.isAssigned = true;
             } catch (error) {
                 console.log(error);
             }

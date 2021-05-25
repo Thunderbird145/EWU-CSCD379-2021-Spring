@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
 using SecretSanta.Business;
@@ -111,7 +112,7 @@ namespace SecretSanta.Api.Controllers
         }
 
         [HttpPut("{id}/generate")]
-        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public ActionResult<AssignmentResult> Generate(int id)
@@ -121,7 +122,7 @@ namespace SecretSanta.Api.Controllers
                 if (result.IsSuccess) {
                     return Ok();
                 }
-                return BadRequest();
+                return BadRequest(result.ErrorMessage);
             }
             return NotFound();
         }
