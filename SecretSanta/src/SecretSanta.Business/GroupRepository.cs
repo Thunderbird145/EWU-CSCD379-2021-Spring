@@ -54,7 +54,7 @@ namespace SecretSanta.Business
             List<User> tempUsers = group.Users;
             Random rng = new Random();  
             int n = tempUsers.Count;  
-            while (n > 1) {  
+            while (n > 1) {  //Shuffle logic from a post on StackOverflow
                 n--;  
                 int k = rng.Next(n + 1);  
                 User value = tempUsers[k];  

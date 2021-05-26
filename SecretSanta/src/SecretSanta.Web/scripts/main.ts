@@ -220,7 +220,9 @@ export function createOrUpdateGroup() {
                 var client = new GroupsClient(apiHost);
                 await client.generate(currentGroupId);
                 this.isAssigned = true;
+                this.generationError = "";
             } catch (error) {
+                this.generationError = error;
                 console.log(error);
             }
             await this.loadData();
