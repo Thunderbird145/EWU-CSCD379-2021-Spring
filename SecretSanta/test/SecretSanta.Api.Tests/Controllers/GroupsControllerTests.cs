@@ -237,7 +237,7 @@ namespace SecretSanta.Api.Tests.Controllers
             HttpClient client = factory.CreateClient();
 
             //Act
-            HttpResponseMessage response = await client.PutAsJsonAsync("/api/groups/42/assign", new Dto.UpdateGroup
+            HttpResponseMessage response = await client.PutAsJsonAsync("/api/groups/42/generate", new Dto.UpdateGroup
             {
                 Name = "Changed"
             });
@@ -262,7 +262,7 @@ namespace SecretSanta.Api.Tests.Controllers
             HttpClient client = factory.CreateClient();
 
             //Act
-            HttpResponseMessage response = await client.PutAsJsonAsync("/api/groups/42/assign", new Dto.UpdateGroup
+            HttpResponseMessage response = await client.PutAsJsonAsync("/api/groups/42/generate", new Dto.UpdateGroup
             {
                 Name = "Changed"
             });

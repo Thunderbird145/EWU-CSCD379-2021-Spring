@@ -47,7 +47,10 @@ namespace SecretSanta.Business
         }
         
         public AssignmentResult GenerateAssignments(int id) {
-            Group group = MockData.Groups[id];
+            Group group = GetItem(id);
+            if (group is null) {
+                return AssignmentResult.Error("Group not found.");
+            }
             if (group.Users.Count <= 2) {
                 return AssignmentResult.Error("Only 2 users in group, need more users.");
             }
@@ -70,17 +73,6 @@ namespace SecretSanta.Business
                 }
             }
             return AssignmentResult.Success();
-        }
-
-        public User? GetAssignment(int id, int userId)
-        {
-            Group group = MockData.Groups[id];
-            foreach (Assignment assignment in group.Assignments) {
-                if (assignment.Giver.Id == userId) {
-                    return assignment.Receiver;
-                }
-            }
-            return null;
         }
     }
 }
