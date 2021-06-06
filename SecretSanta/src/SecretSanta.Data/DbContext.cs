@@ -24,7 +24,16 @@ namespace SecretSanta.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {  
-            
+            modelBuilder.Entity<User>().Property(s => s.FirstName).IsRequired();
+            modelBuilder.Entity<User>().Property(s => s.LastName).IsRequired();
+            modelBuilder.Entity<User>().Property(s => s.Id).IsRequired();
+
+            modelBuilder.Entity<Gift>()
+                .HasAlternateKey(c => new {c.Title});
+            modelBuilder.Entity<Group>()
+                .HasAlternateKey(c => new {c.Name});
+            modelBuilder.Entity<User>()
+                .HasAlternateKey(c => new {c.FirstName, c.LastName});
         }
     }
 }

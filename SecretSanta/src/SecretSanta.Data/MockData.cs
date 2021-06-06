@@ -11,11 +11,17 @@ namespace SecretSanta.Data
             PutUserInGroup(Users[3], Groups[2]);
             PutUserInGroup(Users[4], Groups[2]);
             PutUserInGroup(Users[5], Groups[1]);
+            GiftToUser(Users[1], Gifts[1]);
 
             static void PutUserInGroup(User user, Group group)
             {
                 user.Groups.Add(group);
                 group.Users.Add(user);
+            }
+
+            static void GiftToUser(User user, Gift gift) {
+                user.Gifts.Add(gift);
+                gift.Owner = user;
             }
         }
 
@@ -85,6 +91,21 @@ namespace SecretSanta.Data
                 {
                     Id = 2,
                     Name = "Friends"
+                }
+            }
+        };
+
+        public static Dictionary<int, Gift> Gifts {get;} = new()
+        {
+            {
+                1,
+                new Gift
+                {
+                    Id = 1,
+                    Title = "Rat Poison",
+                    Desc = "Used to kill rats",
+                    Url = "google.com",
+                    Priority = 1
                 }
             }
         };
