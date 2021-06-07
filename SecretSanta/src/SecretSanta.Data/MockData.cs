@@ -12,6 +12,10 @@ namespace SecretSanta.Data
             PutUserInGroup(Users[4], Groups[2]);
             PutUserInGroup(Users[5], Groups[1]);
             GiftToUser(Users[1], Gifts[1]);
+            GiftToUser(Users[1], Gifts[2]);
+            GiftToUser(Users[1], Gifts[3]);
+            GiftToUser(Users[4], Gifts[4]);
+            GiftToUser(Users[5], Gifts[5]);
 
             static void PutUserInGroup(User user, Group group)
             {
@@ -102,6 +106,50 @@ namespace SecretSanta.Data
                 new Gift
                 {
                     Id = 1,
+                    Title = "Rat Poison",
+                    Desc = "Used to kill rats",
+                    Url = "google.com",
+                    Priority = 1
+                }
+            },
+            {
+                2,
+                new Gift
+                {
+                    Id = 2,
+                    Title = "Rat Poison",
+                    Desc = "Used to kill rats",
+                    Url = "google.com",
+                    Priority = 1
+                }
+            },
+            {
+                3,
+                new Gift
+                {
+                    Id = 3,
+                    Title = "Rat Poison",
+                    Desc = "Used to kill rats",
+                    Url = "google.com",
+                    Priority = 1
+                }
+            },
+            {
+                4,
+                new Gift
+                {
+                    Id = 4,
+                    Title = "Rat Poison",
+                    Desc = "Used to kill rats",
+                    Url = "google.com",
+                    Priority = 1
+                }
+            },
+            {
+                5,
+                new Gift
+                {
+                    Id = 5,
                     Title = "Rat Poison",
                     Desc = "Used to kill rats",
                     Url = "google.com",

@@ -57,6 +57,8 @@ export function setupUsers() {
 export function createOrUpdateUser() {
     return {
         user: {} as User,
+        allGifts: [] as Gift[],
+        selectedGiftId: 0,
         async create() {
             try {
                 const client = new UsersClient(apiHost);
@@ -76,6 +78,10 @@ export function createOrUpdateUser() {
             }
         },
         async loadData() {
+            this.loadUser();
+            this.loadGifts();
+        },
+        async loadUser() { 
             const pathnameSplit = window.location.pathname.split('/');
             const id = pathnameSplit[pathnameSplit.length - 1];
             try {
@@ -84,8 +90,19 @@ export function createOrUpdateUser() {
             } catch (error) {
                 console.log(error);
             }
-            
-        }
+        },
+        async loadGifts() {
+            try {
+                var client = new GiftsClient(apiHost);
+                this.allGifts = await client.getAll() || [];
+                var index = this.allGifts.findIndex(x => true);
+                if (index >= 0) {
+                    this.selectedGiftId = this.allGifts[index].id;
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        },
     }
 }
 

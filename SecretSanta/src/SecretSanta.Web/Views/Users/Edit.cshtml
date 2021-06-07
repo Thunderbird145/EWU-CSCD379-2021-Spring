@@ -1,5 +1,14 @@
 <section x-data="SecretSanta.createOrUpdateUser()" x-init="loadData()">
     @await Html.PartialAsync("_CreateOrEdit")
+    <template x-for="gift in user.gifts" :key="gift" x-if="user?.gifts != null">
+        <div class="w-full sm:w-2/3">
+            <section class="border-gray-500 border-2 p-6 m-5 rounded-xl flex flex-row justify-between">
+                <div class="grid grid-cols-3 sm:grid-cols-2 gap-4">
+                    <div class="inline-block col-span-2"><span x-text="`${gift.title}`"></span></div>
+                </div>
+            </section>
+        </div>
+    </template>
     <button class="border-2 bg-green-400 border-green-800 hover:bg-green-600 py-2 px-4 rounded-xl mr-3" @@click="update()">Update</button>
     <a class="inline-block border-2 bg-white border-green-400 hover:border-green-600 py-2 px-4 rounded-xl" asp-controller="Users" asp-action="Index">Cancel</a>
 </section>

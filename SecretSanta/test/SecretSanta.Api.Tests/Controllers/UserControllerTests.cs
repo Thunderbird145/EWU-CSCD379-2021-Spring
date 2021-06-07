@@ -17,7 +17,7 @@ namespace SecretSanta.Api.Tests.Controllers
         [TestMethod]
         public void Constructor_WithNullRepository_ThrowException()
         {
-            var ex = Assert.ThrowsException<ArgumentNullException>(() => new UsersController(null!));
+            var ex = Assert.ThrowsException<ArgumentNullException>(() => new UsersController(null!, new TestableGiftRepository()));
             Assert.AreEqual("repository", ex.ParamName);
         }
 

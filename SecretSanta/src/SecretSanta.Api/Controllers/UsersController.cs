@@ -10,23 +10,26 @@ namespace SecretSanta.Api.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private IUserRepository Repository { get; }
+        private IUserRepository UserRepository { get; }
 
-        public UsersController(IUserRepository repository)
+        private IGiftRepository GiftRepository { get; }
+
+        public UsersController(IUserRepository repository, IGiftRepository giftRepository)
         {
-            Repository = repository ?? throw new System.ArgumentNullException(nameof(repository));
+            UserRepository = repository ?? throw new System.ArgumentNullException(nameof(repository));
+            GiftRepository = giftRepository ?? throw new System.ArgumentNullException(nameof(giftRepository));
         }
 
         [HttpGet]
         public IEnumerable<Dto.User> Get()
         {
-            return Repository.List().Select(x => Dto.User.ToDto(x)!);
+            return UserRepository.List().Select(x => Dto.User.ToDto(x)!);
         }
 
         [HttpGet("{id}")]
         public ActionResult<Dto.User?> Get(int id)
         {
-            Dto.User? user = Dto.User.ToDto(Repository.GetItem(id));
+            Dto.User? user = Dto.User.ToDto(UserRepository.GetItem(id));
             if (user is null) return NotFound();
             return user;
         }
@@ -36,7 +39,7 @@ namespace SecretSanta.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public ActionResult Delete(int id)
         {
-            if (Repository.Remove(id))
+            if (UserRepository.Remove(id))
             {
                 return Ok();
             }
@@ -48,7 +51,7 @@ namespace SecretSanta.Api.Controllers
         [ProducesResponseType(typeof(Dto.User), (int)HttpStatusCode.OK)]
         public ActionResult<Dto.User?> Post([FromBody] Dto.User user)
         {
-            return Dto.User.ToDto(Repository.Create(Dto.User.FromDto(user)!));
+            return Dto.User.ToDto(UserRepository.Create(Dto.User.FromDto(user)!));
         }
 
         [HttpPut("{id}")]
@@ -57,13 +60,13 @@ namespace SecretSanta.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public ActionResult Put(int id, [FromBody] Dto.UpdateUser? user)
         {
-            Data.User? foundUser = Repository.GetItem(id);
+            Data.User? foundUser = UserRepository.GetItem(id);
             if (foundUser is not null)
             {
                 foundUser.FirstName = user?.FirstName ?? "";
                 foundUser.LastName = user?.LastName ?? "";
 
-                Repository.Save(foundUser);
+                UserRepository.Save(foundUser);
                 return Ok();
             }
             return NotFound();
