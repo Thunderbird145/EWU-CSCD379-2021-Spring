@@ -18,14 +18,11 @@ namespace SecretSanta.Api.Dto
                 Id = user.Id,
                 LastName = user.LastName
             };
-            if (includeChildObjects)
+            foreach(Data.Gift? gift in user.Gifts)
             {
-                foreach(Data.Gift? gift in user.Gifts)
+                if (Gift.ToDto(gift) is { } dtoGift)
                 {
-                    if (Gift.ToDto(gift) is { } dtoGift)
-                    {
-                        tempUser.Gifts.Add(dtoGift);
-                    }
+                    tempUser.Gifts.Add(dtoGift);
                 }
             }
             return tempUser;

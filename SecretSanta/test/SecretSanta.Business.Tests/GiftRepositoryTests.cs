@@ -59,26 +59,26 @@ namespace SecretSanta.Business.Tests
             Assert.AreEqual("First", Gift!.Title);
         }
 
-        // [TestMethod]
-        // public void List_WithGifts_ReturnsAllGift()
-        // {
-        //     GiftRepository sut = new();
-        //     sut.Create(new()
-        //     {
-        //         Id = 42,
-        //         Title = "First",
-        //     });
+        [TestMethod]
+        public void List_WithGifts_ReturnsAllGift()
+        {
+            GiftRepository sut = new();
+            sut.Create(new()
+            {
+                Id = 42,
+                Title = "First",
+            });
 
-        //     ICollection<Gift> Gifts = sut.List();
+            ICollection<Gift> Gifts = sut.List();
 
-        //     Assert.AreEqual(MockData.Gifts.Count, Gifts.Count);
-        //     foreach(var mockGift in MockData.Gifts.Values)
-        //     {
-        //         Assert.IsNotNull(Gifts.SingleOrDefault(x => x.Title == mockGift.FirstName && x.LastName == mockGift.LastName));
-        //     }
-        // }
+            Assert.AreEqual(MockData.Gifts.Count, Gifts.Count);
+            foreach(var mockGift in MockData.Gifts.Values)
+            {
+                Assert.IsNotNull(Gifts.SingleOrDefault(x => x.Title == mockGift.Title));
+            }
+        }
 
-/*         [TestMethod]
+        [TestMethod]
         [DataRow(-1, false)]
         [DataRow(42, true)]
         public void Remove_WithInvalidId_ReturnsTrue(int id, bool expected)
@@ -87,13 +87,12 @@ namespace SecretSanta.Business.Tests
             sut.Create(new()
             {
                 Id = 42,
-                FirstName = "First",
-                LastName = "Last"
+                Title = "First",
             });
 
             Assert.AreEqual(expected, sut.Remove(id));
         }
- */
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void Save_NullItem_ThrowsArgumentException()

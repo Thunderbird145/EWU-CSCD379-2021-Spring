@@ -29,7 +29,7 @@ namespace SecretSanta.Api.Controllers
         [HttpGet("{id}")]
         public ActionResult<Dto.User?> Get(int id)
         {
-            Dto.User? user = Dto.User.ToDto(UserRepository.GetItem(id));
+            Dto.User? user = Dto.User.ToDto(UserRepository.GetItem(id), true);
             if (user is null) return NotFound();
             return user;
         }

@@ -19,7 +19,6 @@ namespace SecretSanta.Api.Dto
                 Url = gift.Url,
                 Desc = gift.Desc,
                 Priority = gift.Priority,
-                Owner = User.ToDto(gift.Owner)
             };
         }
 

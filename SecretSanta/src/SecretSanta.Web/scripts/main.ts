@@ -30,6 +30,30 @@ export function setupNav() {
     }
 }
 
+export function setupGifts() {
+    return {
+        gifts: [] as Gift[],
+        async mounted() {
+            await this.loadGifts(); 
+        },
+        async deleteGift(currentGift: Gift) {
+            if (confirm(`Are you sure you want to delete ${currentGift.title}?`)) {
+                var client = new GiftsClient(apiHost);
+                await client.delete(currentGift.id);
+                await this.loadGifts();
+            }
+        },
+        async loadGifts() {
+            try {
+                var client = new GiftsClient(`${apiHost}`);
+                this.gifts = await client.getAll() || [];
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    }
+}
+
 export function setupUsers() {
     return {
         users: [] as User[],
