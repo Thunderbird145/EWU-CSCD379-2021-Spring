@@ -71,5 +71,44 @@ namespace SecretSanta.Api.Controllers
             }
             return NotFound();
         }
+
+        [HttpPut("{id}/remove")]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        public ActionResult Remove(int id, [FromBody] int giftId)
+        {
+            Data.User? foundUser = UserRepository.GetItem(id);
+            if (foundUser is not null)
+            {
+                if (foundUser.Gifts.FirstOrDefault(x => x.Id == giftId) is { } gift)
+                {
+                    foundUser.Gifts.Remove(gift);
+                    UserRepository.Save(foundUser);
+                }
+                return Ok();
+            }
+            return NotFound();
+        }
+
+        [HttpPut("{id}/add")]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        public ActionResult Add(int id, [FromBody] int userId)
+        {
+            // Data.Group? foundGroup = GroupRepository.GetItem(id);
+            // Data.User? foundGift = GiftRepository.GetItem(userId);
+            // if (foundGroup is not null && foundUser is not null)
+            // {
+            //     if (!foundGroup.Users.Any(x => x.Id == foundUser.Id))
+            //     {
+            //         foundGroup.Users.Add(foundUser);
+            //         GroupRepository.Save(foundGroup);
+            //     }
+            //     return Ok();
+            // }
+            return NotFound();
+        }
     }
 }

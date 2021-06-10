@@ -7,7 +7,7 @@ namespace SecretSanta.Api.Dto
         public string? Url { get; set;}
         public string? Desc { get; set;}
         public int? Priority { get; set;}
-        public Dto.User? Owner { get; set;} = new();
+        public int? OwnerID { get; set;}
 
         public static Gift? ToDto(Data.Gift? gift)
         {
@@ -19,6 +19,7 @@ namespace SecretSanta.Api.Dto
                 Url = gift.Url,
                 Desc = gift.Desc,
                 Priority = gift.Priority,
+                OwnerID = gift.OwnerID,
             };
         }
 
@@ -32,7 +33,7 @@ namespace SecretSanta.Api.Dto
                 Url = gift.Url ?? "",
                 Desc = gift.Desc ?? "",
                 Priority = gift.Priority ?? 0,
-                Owner = User.FromDto(gift.Owner)
+                OwnerID = gift.OwnerID ?? 0,
             };
         }
     }

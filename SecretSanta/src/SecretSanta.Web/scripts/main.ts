@@ -54,6 +54,45 @@ export function setupGifts() {
     }
 }
 
+export function createOrUpdateGift() {
+    return {
+        gift: {} as Gift,
+        selectedGiftId: 0,
+        isEditing: false,
+        async create() {
+            try {
+                const client = new GiftsClient(apiHost);
+                await client.post(this.gift);
+                window.location.href='/gifts';
+            } catch (error) {
+                console.log(error);
+            }
+        },
+        async update() {
+            try {
+                const client = new GiftsClient(apiHost);
+                await client.put(this.gift.id, this.gift);
+                window.location.href='/users/edit/' + this.gift.ownerID;
+            } catch (error) {
+                console.log(error);
+            }
+        },
+        async loadData() {
+            this.loadGift();
+        },
+        async loadGift() { 
+            const pathnameSplit = window.location.pathname.split('/');
+            const id = pathnameSplit[pathnameSplit.length - 1];
+            try {
+                const client = new GiftsClient(apiHost);
+                this.gift = await client.get(+id);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    }
+}
+
 export function setupUsers() {
     return {
         users: [] as User[],
@@ -83,6 +122,7 @@ export function createOrUpdateUser() {
         user: {} as User,
         allGifts: [] as Gift[],
         selectedGiftId: 0,
+        isEditing: false,
         async create() {
             try {
                 const client = new UsersClient(apiHost);
@@ -92,11 +132,15 @@ export function createOrUpdateUser() {
                 console.log(error);
             }
         },
+        edit() {
+            this.isEditing = true;
+        },
         async update() {
             try {
                 const client = new UsersClient(apiHost);
                 await client.put(this.user.id, this.user);
-                window.location.href='/users';
+                this.isEditing = false;
+                await this.loadUser();
             } catch (error) {
                 console.log(error);
             }
@@ -127,6 +171,29 @@ export function createOrUpdateUser() {
                 console.log(error);
             }
         },
+        async removeFromUser(currentUser: User, gift: Gift) {
+            if (confirm(`Are you sure you want to remove ${gift.title} from ${currentUser.firstName}'s list?`)) {
+                try {
+                    var client = new UsersClient(apiHost);
+                    var client2 = new GiftsClient(apiHost);
+                    await client.remove(currentUser.id, gift.id);
+                    await client2.delete(gift.id);
+                } catch (error) {
+                    console.log(error);
+                }
+                await this.loadUser();
+            }
+        },
+        async addToGroup(currentGroupId: number) {
+            if (this.selectedGiftId <= 0) return;
+            try {
+                var client = new GroupsClient(apiHost);
+                await client.add(currentGroupId, this.selectedGiftId);
+            } catch (error) {
+                console.log(error);
+            }
+            await this.loadUser();
+        }
     }
 }
 
@@ -166,7 +233,6 @@ export function createOrUpdateGroup() {
         selectedUserId: 0,
         isEditing: false,
         generationError: "",
-
         async create() {
             try {
                 const client = new GroupsClient(apiHost);

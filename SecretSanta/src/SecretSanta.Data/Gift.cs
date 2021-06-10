@@ -9,6 +9,6 @@ namespace SecretSanta.Data
         public string? Url { get; set;}
         public string? Desc { get; set;}
         public int Priority { get; set;} = 0;
-        public User Owner { get; set;} = new User();
+        public int OwnerID { get; set;} = 0;
     }
 }
