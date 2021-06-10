@@ -112,30 +112,30 @@ namespace SecretSanta.Business.Tests
             Assert.AreEqual(42, sut.GetItem(42)?.Id);
         }
 
-        [TestMethod]
-        public void GenerateAssignments_WithInvalidId_ReturnsError()
-        {
-            GroupRepository sut = new();
+        // [TestMethod]
+        // public void GenerateAssignments_WithInvalidId_ReturnsError()
+        // {
+        //     GroupRepository sut = new();
 
-            AssignmentResult result = sut.GenerateAssignments(42);
+        //     AssignmentResult result = sut.GenerateAssignments(42);
 
-            Assert.AreEqual("Group not found", result.ErrorMessage);
-        }
+        //     Assert.AreEqual("Group not found", result.ErrorMessage);
+        // }
 
-        [TestMethod]
-        public void GenerateAssignments_WithLessThanThreeUsers_ReturnsError()
-        {
-            GroupRepository sut = new();
-            sut.Create(new()
-            {
-                Id = 42,
-                Name = "Group"
-            });
+        // [TestMethod]
+        // public void GenerateAssignments_WithLessThanThreeUsers_ReturnsError()
+        // {
+        //     GroupRepository sut = new();
+        //     sut.Create(new()
+        //     {
+        //         Id = 42,
+        //         Name = "Group"
+        //     });
 
-            AssignmentResult result = sut.GenerateAssignments(42);
+        //     AssignmentResult result = sut.GenerateAssignments(42);
 
-            Assert.AreEqual($"Group Group must have at least three users", result.ErrorMessage);
-        }
+        //     Assert.AreEqual($"Group Group must have at least three users", result.ErrorMessage);
+        // }
 
         [TestMethod]
         public void GenerateAssignments_WithValidGroup_CreatesAssignments()

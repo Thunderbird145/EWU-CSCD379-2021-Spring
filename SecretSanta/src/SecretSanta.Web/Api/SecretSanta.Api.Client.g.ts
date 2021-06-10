@@ -783,7 +783,7 @@ export interface IUsersClient {
     delete(id: number): Promise<void>;
     put(id: number, user: UpdateUser): Promise<void>;
     remove(id: number, giftId: number): Promise<void>;
-    add(id: number, userId: number): Promise<void>;
+    addGift(id: number, giftId: number | undefined): Promise<void>;
 }
 
 export class UsersClient implements IUsersClient {
@@ -1133,21 +1133,21 @@ export class UsersClient implements IUsersClient {
         return Promise.resolve<void>(<any>null);
     }
 
-    add(id: number, userId: number , cancelToken?: CancelToken | undefined): Promise<void> {
-        let url_ = this.baseUrl + "/api/Users/{id}/add";
+    addGift(id: number, giftId: number | undefined , cancelToken?: CancelToken | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/Users/{id}/add?";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        if (giftId === null)
+            throw new Error("The parameter 'giftId' cannot be null.");
+        else if (giftId !== undefined)
+            url_ += "giftId=" + encodeURIComponent("" + giftId) + "&";
         url_ = url_.replace(/[?&]$/, "");
 
-        const content_ = JSON.stringify(userId);
-
         let options_ = <AxiosRequestConfig>{
-            data: content_,
             method: "PUT",
             url: url_,
             headers: {
-                "Content-Type": "application/json",
             },
             cancelToken
         };
@@ -1159,11 +1159,11 @@ export class UsersClient implements IUsersClient {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processAdd(_response);
+            return this.processAddGift(_response);
         });
     }
 
-    protected processAdd(response: AxiosResponse): Promise<void> {
+    protected processAddGift(response: AxiosResponse): Promise<void> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {

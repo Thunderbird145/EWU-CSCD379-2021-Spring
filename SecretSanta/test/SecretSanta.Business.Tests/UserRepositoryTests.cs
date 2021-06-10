@@ -82,7 +82,6 @@ namespace SecretSanta.Business.Tests
         }
 
         [TestMethod]
-        [DataRow(-1, false)]
         [DataRow(42, true)]
         public void Remove_WithInvalidId_ReturnsTrue(int id, bool expected)
         {

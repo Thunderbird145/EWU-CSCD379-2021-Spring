@@ -1519,11 +1519,11 @@ namespace SecretSanta.Web.Api
         System.Threading.Tasks.Task RemoveAsync(int id, int giftId, System.Threading.CancellationToken cancellationToken);
     
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task AddAsync(int id, int userId);
+        System.Threading.Tasks.Task AddGiftAsync(int id, int? giftId);
     
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task AddAsync(int id, int userId, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task AddGiftAsync(int id, int? giftId, System.Threading.CancellationToken cancellationToken);
     
     }
     
@@ -2063,24 +2063,26 @@ namespace SecretSanta.Web.Api
         }
     
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public System.Threading.Tasks.Task AddAsync(int id, int userId)
+        public System.Threading.Tasks.Task AddGiftAsync(int id, int? giftId)
         {
-            return AddAsync(id, userId, System.Threading.CancellationToken.None);
+            return AddGiftAsync(id, giftId, System.Threading.CancellationToken.None);
         }
     
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public async System.Threading.Tasks.Task AddAsync(int id, int userId, System.Threading.CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task AddGiftAsync(int id, int? giftId, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
     
-            if (userId == null)
-                throw new System.ArgumentNullException("userId");
-    
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("api/Users/{id}/add");
+            urlBuilder_.Append("api/Users/{id}/add?");
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
+            if (giftId != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("giftId") + "=").Append(System.Uri.EscapeDataString(ConvertToString(giftId, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            urlBuilder_.Length--;
     
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -2088,9 +2090,7 @@ namespace SecretSanta.Web.Api
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
                 {
-                    var content_ = new System.Net.Http.StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(userId, _settings.Value));
-                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
-                    request_.Content = content_;
+                    request_.Content = new System.Net.Http.StringContent(string.Empty, System.Text.Encoding.UTF8, "application/json");
                     request_.Method = new System.Net.Http.HttpMethod("PUT");
     
                     PrepareRequest(client_, request_, urlBuilder_);

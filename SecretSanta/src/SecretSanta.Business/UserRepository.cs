@@ -11,7 +11,7 @@ namespace SecretSanta.Business
             {
                 throw new System.ArgumentNullException(nameof(item));
             }
-
+            
             MockData.Users[item.Id] = item;
             return item;
         }

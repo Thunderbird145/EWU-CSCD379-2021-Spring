@@ -95,19 +95,19 @@ namespace SecretSanta.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public ActionResult Add(int id, [FromBody] int userId)
+        public ActionResult AddGift(int id, int giftId)
         {
-            // Data.Group? foundGroup = GroupRepository.GetItem(id);
-            // Data.User? foundGift = GiftRepository.GetItem(userId);
-            // if (foundGroup is not null && foundUser is not null)
-            // {
-            //     if (!foundGroup.Users.Any(x => x.Id == foundUser.Id))
-            //     {
-            //         foundGroup.Users.Add(foundUser);
-            //         GroupRepository.Save(foundGroup);
-            //     }
-            //     return Ok();
-            // }
+            Data.User? foundUser = UserRepository.GetItem(id);
+            Data.Gift? foundGift = GiftRepository.GetItem(giftId);
+            if (foundUser is not null && foundGift is not null)
+            {
+                if (!foundUser.Gifts.Any(x => x.Id == foundGift.Id))
+                {
+                    foundUser.Gifts.Add(foundGift);
+                    UserRepository.Save(foundUser);
+                }
+                return Ok();
+            }
             return NotFound();
         }
     }

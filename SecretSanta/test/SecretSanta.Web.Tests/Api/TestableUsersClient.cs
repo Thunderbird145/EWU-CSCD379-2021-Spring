@@ -88,12 +88,12 @@ namespace SecretSanta.Web.Tests.Api
             throw new NotImplementedException();
         }
 
-        public Task AddAsync(int id, int userId)
+        public Task AddGiftAsync(int id, int? giftId)
         {
             throw new NotImplementedException();
         }
 
-        public Task AddAsync(int id, int userId, CancellationToken cancellationToken)
+        public Task AddGiftAsync(int id, int? giftId, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

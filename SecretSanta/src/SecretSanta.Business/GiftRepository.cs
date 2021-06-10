@@ -12,16 +12,14 @@ namespace SecretSanta.Business
             {
                 throw new ArgumentNullException(nameof(item));
             }
-
-            MockData.Gifts[item.Id] = item;
             return item;
         }
 
         public Gift? GetItem(int id)
         {
-            if (MockData.Gifts.TryGetValue(id, out Gift? user))
+            if (MockData.Gifts.TryGetValue(id, out Gift? gift))
             {
-                return user;
+                return gift;
             }
             return null;
         }

@@ -57,17 +57,18 @@ export function setupGifts() {
 export function createOrUpdateGift() {
     return {
         gift: {} as Gift,
+        gifts: [] as Gift[],
         selectedGiftId: 0,
         isEditing: false,
         async create() {
             try {
                 const pathnameSplit = window.location.pathname.split('/');
                 const userId = pathnameSplit[pathnameSplit.length - 1];
-                console.log(userId);
                 const giftclient = new GiftsClient(apiHost);
-                const userclient = new GiftsClient(apiHost);
+                const userclient = new UsersClient(apiHost);
                 this.gift.ownerID = parseInt(userId);
                 await giftclient.post(this.gift);
+                await userclient.addGift(this.gift.ownerID, this.gift.id);
                 window.location.href='/users/edit/' + this.gift.ownerID;
             } catch (error) {
                 console.log(error);
