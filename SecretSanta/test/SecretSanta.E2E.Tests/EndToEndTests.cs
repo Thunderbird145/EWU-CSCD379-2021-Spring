@@ -8,7 +8,7 @@ namespace SecretSanta.E2E.Tests
     [TestClass]
     public class EndToEndTests
     {
-        private static WebHostServerFixture<Web.Startup, Api.Startup> _Server;
+/*         private static WebHostServerFixture<Web.Startup, Api.Startup> _Server;
         [ClassInitialize]
         public static void InitializeClass(TestContext testContext)
         {
@@ -151,6 +151,6 @@ namespace SecretSanta.E2E.Tests
             await page.ClickAsync("body > section > section > section:last-child > a > section > form > button");
             gifts = await page.QuerySelectorAllAsync("body > section > section > section");
             Assert.AreEqual(4, gifts.Count());
-        }
+        } */
     }
 }

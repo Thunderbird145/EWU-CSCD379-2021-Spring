@@ -77,5 +77,25 @@ namespace SecretSanta.Web.Tests.Api
         {
             throw new NotImplementedException();
         }
+
+        public Task RemoveAsync(int id, int giftId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task RemoveAsync(int id, int giftId, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task AddAsync(int id, int userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task AddAsync(int id, int userId, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

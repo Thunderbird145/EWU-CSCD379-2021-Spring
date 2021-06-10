@@ -61,8 +61,13 @@ export function createOrUpdateGift() {
         isEditing: false,
         async create() {
             try {
-                const client = new GiftsClient(apiHost);
-                await client.post(this.gift);
+                const pathnameSplit = window.location.pathname.split('/');
+                const userId = pathnameSplit[pathnameSplit.length - 1];
+                console.log(userId);
+                const giftclient = new GiftsClient(apiHost);
+                const userclient = new GiftsClient(apiHost);
+                this.gift.ownerID = parseInt(userId);
+                await giftclient.post(this.gift);
                 window.location.href='/users/edit/' + this.gift.ownerID;
             } catch (error) {
                 console.log(error);
@@ -188,11 +193,10 @@ export function createOrUpdateUser() {
             try {
                 var client = new UsersClient(apiHost);
                 var giftClient = new GiftsClient(apiHost);
-                window.location.href='/gifts/create';
+                window.location.href='/gifts/create/' + currentUser.id;
                 console.log("creating gift");
             } catch (error) {
                 console.log(error);
-                console.log(currentUser.id);
             }
         }
     }
