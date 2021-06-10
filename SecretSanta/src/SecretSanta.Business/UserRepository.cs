@@ -32,6 +32,9 @@ namespace SecretSanta.Business
 
         public bool Remove(int id)
         {
+            foreach(Gift gift in MockData.Users[id].Gifts) {
+                MockData.Gifts.Remove(gift.Id);
+            }
             return MockData.Users.Remove(id);
         }
 

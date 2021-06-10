@@ -63,7 +63,7 @@ export function createOrUpdateGift() {
             try {
                 const client = new GiftsClient(apiHost);
                 await client.post(this.gift);
-                window.location.href='/gifts';
+                window.location.href='/users/edit/' + this.gift.ownerID;
             } catch (error) {
                 console.log(error);
             }
@@ -140,10 +140,10 @@ export function createOrUpdateUser() {
                 const client = new UsersClient(apiHost);
                 await client.put(this.user.id, this.user);
                 this.isEditing = false;
-                await this.loadUser();
             } catch (error) {
                 console.log(error);
             }
+            this.loadUser;
         },
         async loadData() {
             this.loadUser();
@@ -184,15 +184,16 @@ export function createOrUpdateUser() {
                 await this.loadUser();
             }
         },
-        async addToGroup(currentGroupId: number) {
-            if (this.selectedGiftId <= 0) return;
+        async createGift(currentUser: User) {
             try {
-                var client = new GroupsClient(apiHost);
-                await client.add(currentGroupId, this.selectedGiftId);
+                var client = new UsersClient(apiHost);
+                var giftClient = new GiftsClient(apiHost);
+                window.location.href='/gifts/create';
+                console.log("creating gift");
             } catch (error) {
                 console.log(error);
+                console.log(currentUser.id);
             }
-            await this.loadUser();
         }
     }
 }
