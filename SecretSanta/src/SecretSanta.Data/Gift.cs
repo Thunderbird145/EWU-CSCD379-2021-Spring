@@ -10,6 +10,5 @@ namespace SecretSanta.Data
         public string? Desc { get; set;}
         public int Priority { get; set;} = 0;
         public int UserId { get; set;} = 0;
-        public User User { get; set;} = new();
     }
 }

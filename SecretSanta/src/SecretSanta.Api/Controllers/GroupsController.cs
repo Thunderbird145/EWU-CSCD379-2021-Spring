@@ -100,11 +100,7 @@ namespace SecretSanta.Api.Controllers
             Data.User? foundUser = UserRepository.GetItem(userId);
             if (foundGroup is not null && foundUser is not null)
             {
-                if (!foundGroup.Users.Any(x => x.Id == foundUser.Id))
-                {
-                    foundGroup.Users.Add(foundUser);
-                    GroupRepository.Save(foundGroup);
-                }
+                GroupRepository.addUser(userId, id);
                 return Ok();
             }
             return NotFound();

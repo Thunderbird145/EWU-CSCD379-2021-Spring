@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <template x-for="user in group.users" :key="user" x-if="group?.users != null">
+    <template x-for="user in allUsers" :key="user">
         <div class="w-full sm:w-2/3">
             <section class="border-gray-500 border-2 p-6 m-5 rounded-xl flex flex-row justify-between">
                 <div class="grid grid-cols-3 sm:grid-cols-2 gap-4">

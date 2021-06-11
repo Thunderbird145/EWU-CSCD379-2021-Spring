@@ -10,15 +10,15 @@ namespace SecretSanta.Business.Tests
     [TestClass]
     public class UserRepositoryTests
     {
-        // [TestCleanup]
-        // async public Task Clear_Database()
-        // {
-        //     using DbContext dbContext = new DbContext();
-        //     IQueryable<User>? gifts = dbContext.Users.Where(
-        //         item => item.FirstName.StartsWith(""));
-        //     dbContext.Users.RemoveRange(gifts);
-        //     await dbContext.SaveChangesAsync();
-        // }
+        [TestCleanup]
+        async public Task Clear_Database()
+        {
+            using DbContext dbContext = new DbContext();
+            IQueryable<User>? gifts = dbContext.Users.Where(
+                item => item.FirstName.StartsWith(""));
+            dbContext.Users.RemoveRange(gifts);
+            await dbContext.SaveChangesAsync();
+        }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]

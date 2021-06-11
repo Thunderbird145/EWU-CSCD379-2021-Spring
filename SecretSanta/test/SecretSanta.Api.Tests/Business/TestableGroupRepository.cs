@@ -32,5 +32,10 @@ namespace SecretSanta.Api.Tests.Business
         public bool Remove(int id) => Groups.Remove(id);
 
         public void Save(Group item) => Groups[item.Id] = item;
+
+        public User addUser(int userId, int groupId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

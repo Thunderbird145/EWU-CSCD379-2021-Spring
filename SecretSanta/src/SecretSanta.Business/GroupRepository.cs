@@ -12,38 +12,84 @@ namespace SecretSanta.Business
             {
                 throw new ArgumentNullException(nameof(item));
             }
+            using var dbContext = new DbContext();
+            dbContext.Groups.Add(item);
+            dbContext.SaveChangesAsync();
 
-            MockData.Groups[item.Id] = item;
             return item;
         }
 
         public Group? GetItem(int id)
         {
-            if (MockData.Groups.TryGetValue(id, out Group? user))
-            {
-                return user;
-            }
-            return null;
+            using var dbContext = new DbContext();
+
+            Group group = dbContext.Groups.Find(id);
+
+
+            return group;
         }
 
         public ICollection<Group> List()
         {
-            return MockData.Groups.Values;
+            using DbContext dbContext = new DbContext();
+            List<Group> groupList = new List<Group>();
+            foreach (var group in dbContext.Groups)
+            {
+                groupList.Add(group);
+            }
+            return groupList;
         }
 
         public bool Remove(int id)
         {
-            return MockData.Groups.Remove(id);
+            try {
+                using var dbContext = new DbContext();
+                Group group = dbContext.Groups.Find(id);
+                dbContext.Groups.Remove(group);
+                dbContext.SaveChangesAsync();
+                return true;
+            } catch {
+                return false;
+            }
         }
 
         public void Save(Group item)
         {
             if (item is null)
             {
-                throw new ArgumentNullException(nameof(item));
+                throw new System.ArgumentNullException(nameof(item));
             }
 
-            MockData.Groups[item.Id] = item;
+            using var dbContext = new DbContext();
+
+            Group temp = dbContext.Groups.Find(item.Id);
+            if (temp is null)
+            {
+                Create(item);
+            }
+            else
+            {
+                dbContext.Groups.Remove(dbContext.Groups.Find(item.Id));
+                dbContext.Groups.Add(item);
+            }
+            dbContext.SaveChangesAsync();
+        }
+
+        public User addUser(int userId, int groupId) 
+        {
+            using var dbContext = new DbContext();
+
+            Group group = dbContext.Groups.Find(groupId);
+            dbContext.Groups.Remove(dbContext.Groups.Find(groupId));
+
+            User user = dbContext.Users.Find(userId);
+            group.Users.Add(user);
+
+            dbContext.Groups.Add(group);
+
+            dbContext.SaveChangesAsync();
+
+            return new User();
         }
 
         public AssignmentResult GenerateAssignments(int groupId)

@@ -190,9 +190,9 @@ export function createOrUpdateUser() {
         },
         async createGift(currentUser: User) {
             try {
-                var client = new UsersClient(apiHost);
-                var giftClient = new GiftsClient(apiHost);
-                window.location.href='/gifts/create/' + currentUser.id;
+                const pathnameSplit = window.location.pathname.split('/');
+                const id = pathnameSplit[pathnameSplit.length - 1];
+                window.location.href='/gifts/create/' + id;
                 console.log("creating gift");
             } catch (error) {
                 console.log(error);

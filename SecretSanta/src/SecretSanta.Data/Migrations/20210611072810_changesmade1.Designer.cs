@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SecretSanta.Data;
 
 namespace SecretSanta.Data.Migrations
 {
     [DbContext(typeof(DbContext))]
-    partial class DbContextModelSnapshot : ModelSnapshot
+    [Migration("20210611072810_changesmade1")]
+    partial class changesmade1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,10 +93,9 @@ namespace SecretSanta.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasAlternateKey("Title");
 
-                    b.HasIndex("Title", "UserId", "Desc")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
                     b.ToTable("Gifts");
                 });
@@ -184,11 +185,13 @@ namespace SecretSanta.Data.Migrations
 
             modelBuilder.Entity("SecretSanta.Data.Gift", b =>
                 {
-                    b.HasOne("SecretSanta.Data.User", null)
+                    b.HasOne("SecretSanta.Data.User", "User")
                         .WithMany("Gifts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("SecretSanta.Data.User", b =>

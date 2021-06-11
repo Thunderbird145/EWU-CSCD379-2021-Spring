@@ -14,7 +14,7 @@ namespace SecretSanta.Data
     public class DbContext : Microsoft.EntityFrameworkCore.DbContext
     {
         public DbContext()
-            : base(new DbContextOptionsBuilder<DbContext>().UseSqlite($"Data Source=D:/School/CSCD379/SecondaryBranch/SecretSanta/src/SecretSanta.Data/main.db").Options)
+            : base(new DbContextOptionsBuilder<DbContext>().UseSqlite($"Data Source=main.db").Options)
         { }
 
         public DbSet<Gift> Gifts => Set<Gift>();
@@ -24,12 +24,9 @@ namespace SecretSanta.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {  
-            modelBuilder.Entity<User>().Property(s => s.FirstName).IsRequired();
-            modelBuilder.Entity<User>().Property(s => s.LastName).IsRequired();
-            modelBuilder.Entity<User>().Property(s => s.Id).IsRequired();
-
             modelBuilder.Entity<Gift>()
-                .HasAlternateKey(c => new {c.Title});
+                .HasIndex(item => new { item.Title, item.UserId, item.Desc })
+                .IsUnique();
             modelBuilder.Entity<Group>()
                 .HasAlternateKey(c => new {c.Name});
             modelBuilder.Entity<User>()

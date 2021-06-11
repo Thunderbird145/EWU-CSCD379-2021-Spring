@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Threading.Tasks;
 using SecretSanta.Data;
 
 namespace SecretSanta.Business.Tests
@@ -9,6 +10,15 @@ namespace SecretSanta.Business.Tests
     [TestClass]
     public class GroupRepositoryTests
     {
+        [TestCleanup]
+        async public Task Clear_Database()
+        {
+            using DbContext dbContext = new DbContext();
+            GroupRepository girepo = new GroupRepository();
+            dbContext.Groups.RemoveRange(girepo.List());
+            await dbContext.SaveChangesAsync();
+        }
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void Create_NullItem_ThrowsArgumentException()
@@ -30,7 +40,7 @@ namespace SecretSanta.Business.Tests
             Group createdGroup = sut.Create(user);
 
             Group? retrievedGroup = sut.GetItem(createdGroup.Id);
-            Assert.AreEqual(user, retrievedGroup);
+            Assert.AreEqual(user.Name, retrievedGroup.Name);
         }
 
         [TestMethod]

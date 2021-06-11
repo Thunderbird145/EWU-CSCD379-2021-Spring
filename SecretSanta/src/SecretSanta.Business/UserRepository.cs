@@ -46,7 +46,7 @@ namespace SecretSanta.Business
                 User user = dbContext.Users.Find(id);
                 foreach(Gift gift in user.Gifts) {
                     IGiftRepository giftrepo = new GiftRepository();
-                    giftrepo.Remove(id);
+                    giftrepo.Remove(gift.Id);
                 }
                 dbContext.Users.Remove(user);
                 dbContext.SaveChangesAsync();
