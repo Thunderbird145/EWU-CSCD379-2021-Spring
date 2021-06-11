@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Threading.Tasks;
 using SecretSanta.Data;
 
 namespace SecretSanta.Business.Tests
@@ -9,6 +10,16 @@ namespace SecretSanta.Business.Tests
     [TestClass]
     public class UserRepositoryTests
     {
+        // [TestCleanup]
+        // async public Task Clear_Database()
+        // {
+        //     using DbContext dbContext = new DbContext();
+        //     IQueryable<User>? gifts = dbContext.Users.Where(
+        //         item => item.FirstName.StartsWith(""));
+        //     dbContext.Users.RemoveRange(gifts);
+        //     await dbContext.SaveChangesAsync();
+        // }
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void Create_NullItem_ThrowsArgumentException()
@@ -22,15 +33,14 @@ namespace SecretSanta.Business.Tests
         public void Create_WithItem_CanGetItem()
         {
             UserRepository sut = new();
-            User user = new()
-            {
-                Id = 42
-            };
+            User user = new();
+            user.FirstName = "billy";
+            user.LastName = "bentl";
 
             User createdUser = sut.Create(user);
 
-            User? retrievedUser = sut.GetItem(createdUser.Id);
-            Assert.AreEqual(user, retrievedUser);
+            User retrievedUser = sut.GetItem(createdUser.Id);
+            Assert.AreEqual(user.FirstName, retrievedUser.FirstName);
         }
 
         [TestMethod]

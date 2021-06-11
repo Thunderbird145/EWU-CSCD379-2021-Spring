@@ -26,7 +26,7 @@ namespace SecretSanta.Data
 
             static void GiftToUser(User user, Gift gift) {
                 user.Gifts.Add(gift);
-                gift.OwnerID = user.Id;
+                gift.UserId = user.Id;
             }
         }
 
@@ -122,7 +122,7 @@ namespace SecretSanta.Data
                     Desc = "Used to kill rats",
                     Url = "google.com",
                     Priority = 1,
-                    OwnerID = 0
+                    UserId = 0
                 }
             },
             {
@@ -134,7 +134,7 @@ namespace SecretSanta.Data
                     Desc = "Used to kill rats",
                     Url = "google.com",
                     Priority = 1,
-                    OwnerID = 0
+                    UserId = 0
                 }
             },
             {
@@ -146,7 +146,7 @@ namespace SecretSanta.Data
                     Desc = "Used to kill rats",
                     Url = "google.com",
                     Priority = 1,
-                    OwnerID = 0
+                    UserId = 0
                 }
             },
             {
@@ -158,7 +158,7 @@ namespace SecretSanta.Data
                     Desc = "Used to kill rats",
                     Url = "google.com",
                     Priority = 1,
-                    OwnerID = 0
+                    UserId = 0
                 }
             },
             {
@@ -170,7 +170,7 @@ namespace SecretSanta.Data
                     Desc = "Is a rat",
                     Url = "google.com",
                     Priority = 1,
-                    OwnerID = 0
+                    UserId = 0
                 }
             }
         };

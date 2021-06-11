@@ -14,7 +14,7 @@ namespace SecretSanta.Data
     public class DbContext : Microsoft.EntityFrameworkCore.DbContext
     {
         public DbContext()
-            : base(new DbContextOptionsBuilder<DbContext>().UseSqlite("Data Source=main.db").Options)
+            : base(new DbContextOptionsBuilder<DbContext>().UseSqlite($"Data Source=D:/School/CSCD379/SecondaryBranch/SecretSanta/src/SecretSanta.Data/main.db").Options)
         { }
 
         public DbSet<Gift> Gifts => Set<Gift>();

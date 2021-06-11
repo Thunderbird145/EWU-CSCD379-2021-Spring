@@ -1202,7 +1202,7 @@ export class Gift implements IGift {
     url?: string | undefined;
     desc?: string | undefined;
     priority?: number | undefined;
-    ownerID?: number | undefined;
+    userId?: number | undefined;
 
     constructor(data?: IGift) {
         if (data) {
@@ -1220,7 +1220,7 @@ export class Gift implements IGift {
             this.url = _data["url"];
             this.desc = _data["desc"];
             this.priority = _data["priority"];
-            this.ownerID = _data["ownerID"];
+            this.userId = _data["userId"];
         }
     }
 
@@ -1238,7 +1238,7 @@ export class Gift implements IGift {
         data["url"] = this.url;
         data["desc"] = this.desc;
         data["priority"] = this.priority;
-        data["ownerID"] = this.ownerID;
+        data["userId"] = this.userId;
         return data; 
     }
 }
@@ -1249,7 +1249,7 @@ export interface IGift {
     url?: string | undefined;
     desc?: string | undefined;
     priority?: number | undefined;
-    ownerID?: number | undefined;
+    userId?: number | undefined;
 }
 
 export class ProblemDetails implements IProblemDetails {

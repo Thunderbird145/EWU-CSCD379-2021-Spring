@@ -65,11 +65,9 @@ export function createOrUpdateGift() {
                 const pathnameSplit = window.location.pathname.split('/');
                 const userId = pathnameSplit[pathnameSplit.length - 1];
                 const giftclient = new GiftsClient(apiHost);
-                const userclient = new UsersClient(apiHost);
-                this.gift.ownerID = parseInt(userId);
+                this.gift.userId = parseInt(userId);
                 await giftclient.post(this.gift);
-                await userclient.addGift(this.gift.ownerID, this.gift.id);
-                window.location.href='/users/edit/' + this.gift.ownerID;
+                window.location.href='/users/edit/' + this.gift.userId;
             } catch (error) {
                 console.log(error);
             }
@@ -78,7 +76,7 @@ export function createOrUpdateGift() {
             try {
                 const client = new GiftsClient(apiHost);
                 await client.put(this.gift.id, this.gift);
-                window.location.href='/users/edit/' + this.gift.ownerID;
+                window.location.href='/users/edit/' + this.gift.userId;
             } catch (error) {
                 console.log(error);
             }
