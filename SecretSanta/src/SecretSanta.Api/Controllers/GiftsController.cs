@@ -20,6 +20,7 @@ namespace SecretSanta.Api.Controllers
         [HttpGet]
         public IEnumerable<Dto.Gift> Get()
         {
+            Serilog.Log.Information("Getting all gifts");
             return Repository.List().Select(x => Dto.Gift.ToDto(x)!);
         }
 
@@ -27,6 +28,7 @@ namespace SecretSanta.Api.Controllers
         public ActionResult<Dto.Gift?> Get(int id)
         {
             Dto.Gift? Gift = Dto.Gift.ToDto(Repository.GetItem(id));
+            Serilog.Log.Information("Getting all gifts");
             if (Gift is null) return NotFound();
             return Gift;
         }

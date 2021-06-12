@@ -79,6 +79,7 @@ namespace SecretSanta.Api.Controllers
         public ActionResult Remove(int id, [FromBody] int giftId)
         {
             Data.User? foundUser = UserRepository.GetItem(id);
+            Data.Gift? foundGift = GiftRepository.GetItem(giftId);
             if (foundUser is not null)
             {
                 if (foundUser.Gifts.FirstOrDefault(x => x.Id == giftId) is { } gift)
@@ -86,6 +87,7 @@ namespace SecretSanta.Api.Controllers
                     foundUser.Gifts.Remove(gift);
                     UserRepository.Save(foundUser);
                 }
+                Serilog.Log.Information("Removing " + foundGift.Title + "from " + foundUser.FirstName + " " + foundUser.LastName + "'s list.");
                 return Ok();
             }
             return NotFound();

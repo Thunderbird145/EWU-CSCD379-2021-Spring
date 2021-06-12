@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SecretSanta.Data;
+using Microsoft.Extensions.Logging;
 
 namespace SecretSanta.Business
 {
@@ -12,10 +13,6 @@ namespace SecretSanta.Business
             {
                 throw new ArgumentNullException(nameof(item));
             }
-            item.Users.Add(new User() {
-                FirstName = "ffd",
-                LastName = "Frido"
-            }); 
 
             using var dbContext = new DbContext();
             dbContext.Groups.Add(item);
@@ -64,7 +61,7 @@ namespace SecretSanta.Business
             {
                 throw new System.ArgumentNullException(nameof(item));
             }
-
+            
             using (var context = new DbContext())
             {
                 var group = context.Groups.Find(item.Id);

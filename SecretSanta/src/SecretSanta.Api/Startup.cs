@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SecretSanta.Business;
 using SecretSanta.Data;
+using Serilog;
+using Serilog.Configuration;
 
 namespace SecretSanta.Api
 {
@@ -13,6 +15,7 @@ namespace SecretSanta.Api
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLogging( builder=> {builder.AddSerilog(logger: Log.Logger);});
             services.AddDbContext<DbContext>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IGroupRepository, GroupRepository>();
