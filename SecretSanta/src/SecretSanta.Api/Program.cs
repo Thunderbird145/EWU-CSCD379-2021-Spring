@@ -19,7 +19,6 @@ namespace SecretSanta.Api
         {
             Log.Logger = new LoggerConfiguration()
                         .MinimumLevel.Information()
-                        .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
                         .Enrich.FromLogContext()
                         .WriteTo.File("Log.txt")
                         .WriteTo.Console()

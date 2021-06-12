@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using SecretSanta.Data;
 
 namespace SecretSanta.Business
@@ -11,27 +12,27 @@ namespace SecretSanta.Business
             {
                 throw new System.ArgumentNullException(nameof(item));
             }
-            using var dbContext = new DbContext();
-            dbContext.Users.Add(item);
-            dbContext.SaveChangesAsync();
+            using var Context = new Context();
+            Context.Users.Add(item);
+            Context.SaveChangesAsync();
 
             return item;
         }
 
         public User? GetItem(int id)
         {
-            using var dbContext = new DbContext();
+            using var Context = new Context();
 
-            User user = dbContext.Users.Find(id);
+            User user = Context.Users.Include(blog => blog.Posts).Find(id);
 
             return user;
         }
 
         public ICollection<User> List()
         {
-            using DbContext dbContext = new DbContext();
+            using Context Context = new Context();
             List<User> userList = new List<User>();
-            foreach (var user in dbContext.Users)
+            foreach (var user in Context.Users)
             {
                 userList.Add(user);
             }
@@ -42,14 +43,14 @@ namespace SecretSanta.Business
         {
 
             try {
-                using var dbContext = new DbContext();
-                User user = dbContext.Users.Find(id);
+                using var Context = new Context();
+                User user = Context.Users.Find(id);
                 foreach(Gift gift in user.Gifts) {
                     IGiftRepository giftrepo = new GiftRepository();
                     giftrepo.Remove(gift.Id);
                 }
-                dbContext.Users.Remove(user);
-                dbContext.SaveChangesAsync();
+                Context.Users.Remove(user);
+                Context.SaveChangesAsync();
                 return true;
             } catch {
                 return false;
@@ -63,19 +64,19 @@ namespace SecretSanta.Business
                 throw new System.ArgumentNullException(nameof(item));
             }
 
-            using var dbContext = new DbContext();
+            using var Context = new Context();
 
-            User temp = dbContext.Users.Find(item.Id);
+            User temp = Context.Users.Find(item.Id);
             if (temp is null)
             {
                 Create(item);
             }
             else
             {
-                dbContext.Users.Remove(dbContext.Users.Find(item.Id));
-                dbContext.Users.Add(item);
+                Context.Users.Remove(Context.Users.Find(item.Id));
+                Context.Users.Add(item);
             }
-            dbContext.SaveChangesAsync();
+            Context.SaveChangesAsync();
         }
     }
 }

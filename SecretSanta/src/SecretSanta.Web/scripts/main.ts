@@ -135,6 +135,7 @@ export function createOrUpdateUser() {
             } catch (error) {
                 console.log(error);
             }
+            this.loadData;
         },
         edit() {
             this.isEditing = true;
@@ -147,7 +148,7 @@ export function createOrUpdateUser() {
             } catch (error) {
                 console.log(error);
             }
-            this.loadUser;
+            this.loadData;
         },
         async loadData() {
             this.loadUser();
@@ -167,10 +168,6 @@ export function createOrUpdateUser() {
             try {
                 var client = new GiftsClient(apiHost);
                 this.allGifts = await client.getAll() || [];
-                var index = this.allGifts.findIndex(x => true);
-                if (index >= 0) {
-                    this.selectedGiftId = this.allGifts[index].id;
-                }
             } catch (error) {
                 console.log(error);
             }
@@ -178,7 +175,6 @@ export function createOrUpdateUser() {
         async removeFromUser(currentUser: User, gift: Gift) {
             if (confirm(`Are you sure you want to remove ${gift.title} from ${currentUser.firstName}'s list?`)) {
                 try {
-                    var client = new UsersClient(apiHost);
                     var client2 = new GiftsClient(apiHost);
                     await client2.delete(gift.id);
                 } catch (error) {
@@ -189,8 +185,6 @@ export function createOrUpdateUser() {
         },
         async createGift(currentUser: User) {
             try {
-                var client = new UsersClient(apiHost);
-                var giftClient = new GiftsClient(apiHost);
                 window.location.href='/gifts/create/' + this.user.id;
                 console.log("creating gift");
             } catch (error) {

@@ -14,18 +14,18 @@ namespace SecretSanta.Business
                 throw new ArgumentNullException(nameof(item));
             }
 
-            using var dbContext = new DbContext();
-            dbContext.Groups.Add(item);
-            dbContext.SaveChangesAsync();
+            using var DatabaseContext = new DatabaseContext();
+            DatabaseContext.Groups.Add(item);
+            DatabaseContext.SaveChangesAsync();
 
             return item;
         }
 
         public Group? GetItem(int id)
         {
-            using var dbContext = new DbContext();
+            using var DatabaseContext = new DatabaseContext();
 
-            Group group = dbContext.Groups.Find(id);
+            Group group = DatabaseContext.Groups.Find(id);
 
 
             return group;
@@ -33,9 +33,9 @@ namespace SecretSanta.Business
 
         public ICollection<Group> List()
         {
-            using DbContext dbContext = new DbContext();
+            using DatabaseContext DatabaseContext = new DatabaseContext();
             List<Group> groupList = new List<Group>();
-            foreach (var group in dbContext.Groups)
+            foreach (var group in DatabaseContext.Groups)
             {
                 groupList.Add(group);
             }
@@ -45,10 +45,10 @@ namespace SecretSanta.Business
         public bool Remove(int id)
         {
             try {
-                using var dbContext = new DbContext();
-                Group group = dbContext.Groups.Find(id);
-                dbContext.Groups.Remove(group);
-                dbContext.SaveChangesAsync();
+                using var DatabaseContext = new DatabaseContext();
+                Group group = DatabaseContext.Groups.Find(id);
+                DatabaseContext.Groups.Remove(group);
+                DatabaseContext.SaveChangesAsync();
                 return true;
             } catch {
                 return false;
@@ -62,29 +62,25 @@ namespace SecretSanta.Business
                 throw new System.ArgumentNullException(nameof(item));
             }
             
-            using (var context = new DbContext())
-            {
-                var group = context.Groups.Find(item.Id);
-                group.Name = item.Name;
-                group.Users = item.Users;
-                context.SaveChangesAsync();
-            }
-            
+            using var context = new DatabaseContext();
+            context.Groups.Update(item);
+            context.SaveChangesAsync();
+
         }
 
         public User addUser(int userId, int groupId) 
         {
-            using var dbContext = new DbContext();
+            using var DatabaseContext = new DatabaseContext();
 
-            Group group = dbContext.Groups.Find(groupId);
+            Group group = DatabaseContext.Groups.Find(groupId);
 
-            User user = dbContext.Users.Find(userId);
+            User user = DatabaseContext.Users.Find(userId);
 
             group.Name = "bill";
 
             group.Users.Add(user);
 
-            dbContext.SaveChangesAsync();
+            DatabaseContext.SaveChangesAsync();
 
             return new User();
         }

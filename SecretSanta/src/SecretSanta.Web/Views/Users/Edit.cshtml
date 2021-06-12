@@ -18,23 +18,25 @@
             </div>
         </div>
     </div>
-    <template x-for="gift in allGifts" :key="gift" x-if="allGifts != null">
-        <template x-if="gift.userId == user.id">
-            <div class="w-full sm:w-2/3">
-                <a :href="`https://localhost:5001/gifts/edit/${gift.id}`">
-                    <section class="border-gray-500 border-2 p-6 m-5 rounded-xl flex flex-row justify-between">
-                        <div class="grid grid-cols-3 sm:grid-cols-2 gap-4">
-                            <div class="inline-block col-span-2"><span x-text="`${gift.title}`"></span></div>
-                            <button class="-mt-6 col-start-3 content-end" @@click.prevent="removeFromUser(user, gift)"><i class="fas fa-trash text-gray-700 hover:text-red-700"></i></button>
-                            <div class="col-span-2">
-                                <i class="fas fa-gift text-gray-700"></i>
-                                <i class="fas fa-arrow-right text-gray-700"></i>
+    <template x-for="gift in allGifts" :key="gift">
+        <div>
+            <template x-if="gift.userId == user.id">
+                <div class="w-full sm:w-2/3">
+                    <a :href="`https://localhost:5001/gifts/edit/${gift.id}`">
+                        <section class="border-gray-500 border-2 p-6 m-5 rounded-xl flex flex-row justify-between">
+                            <div class="grid grid-cols-3 sm:grid-cols-2 gap-4">
+                                <div class="inline-block col-span-2"><span x-text="`${gift.title}`"></span></div>
+                                <button class="-mt-6 col-start-3 content-end" @@click.prevent="removeFromUser(user, gift)"><i class="fas fa-trash text-gray-700 hover:text-red-700"></i></button>
+                                <div class="col-span-2">
+                                    <i class="fas fa-gift text-gray-700"></i>
+                                    <i class="fas fa-arrow-right text-gray-700"></i>
+                                </div>
                             </div>
-                        </div>
-                    </section>
-                </a>
-            </div>
-        </template>
+                        </section>
+                    </a>
+                </div>
+            </template>
+        </div>
     </template>
     <button class="border-2 bg-green-400 border-green-800 hover:bg-green-600 py-2 px-4 rounded-xl mr-3" @@click="createGift()">Create Gift</button>
     <a class="inline-block border-2 bg-white border-green-400 hover:border-green-600 py-2 px-4 rounded-xl" asp-controller="Users" asp-action="Index">Cancel</a>

@@ -12,27 +12,27 @@ namespace SecretSanta.Business
             {
                 throw new ArgumentNullException(nameof(item));
             }
-            using var dbContext = new DbContext();
-            dbContext.Gifts.Add(item);
-            dbContext.SaveChangesAsync();
+            using var DatabaseContext = new DatabaseContext();
+            DatabaseContext.Gifts.Add(item);
+            DatabaseContext.SaveChangesAsync();
 
             return item;
         }
 
         public Gift? GetItem(int id)
         {
-            using var dbContext = new DbContext();
+            using var DatabaseContext = new DatabaseContext();
 
-            Gift gift = dbContext.Gifts.Find(id);
+            Gift gift = DatabaseContext.Gifts.Find(id);
 
             return gift;
         }
 
         public ICollection<Gift> List()
         {
-            using DbContext dbContext = new DbContext();
+            using DatabaseContext DatabaseContext = new DatabaseContext();
             List<Gift> giftList = new List<Gift>();
-            foreach (var gift in dbContext.Gifts)
+            foreach (var gift in DatabaseContext.Gifts)
             {
                 giftList.Add(gift);
             }
@@ -42,10 +42,10 @@ namespace SecretSanta.Business
         public bool Remove(int id)
         {
             try {
-                using var dbContext = new DbContext();
-                Gift gift = dbContext.Gifts.Find(id);
-                dbContext.Gifts.Remove(gift);
-                dbContext.SaveChangesAsync();
+                using var DatabaseContext = new DatabaseContext();
+                Gift gift = DatabaseContext.Gifts.Find(id);
+                DatabaseContext.Gifts.Remove(gift);
+                DatabaseContext.SaveChangesAsync();
                 return true;
             } catch {
                 return false;
@@ -59,19 +59,19 @@ namespace SecretSanta.Business
                 throw new System.ArgumentNullException(nameof(item));
             }
 
-            using var dbContext = new DbContext();
+            using var DatabaseContext = new DatabaseContext();
 
-            Gift temp = dbContext.Gifts.Find(item.Id);
+            Gift temp = DatabaseContext.Gifts.Find(item.Id);
             if (temp is null)
             {
                 Create(item);
             }
             else
             {
-                dbContext.Gifts.Remove(dbContext.Gifts.Find(item.Id));
-                dbContext.Gifts.Add(item);
+                DatabaseContext.Gifts.Remove(DatabaseContext.Gifts.Find(item.Id));
+                DatabaseContext.Gifts.Add(item);
             }
-            dbContext.SaveChangesAsync();
+            DatabaseContext.SaveChangesAsync();
         }
     }
 }
