@@ -1,10 +1,16 @@
+using System;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Sinks.File;
 
 namespace SecretSanta.Api
 {
     public class Program
     {
+        public static ILoggerFactory LoggerFactory{get;set;}
+        private static Serilog.ILogger Logger{get;set;}
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();

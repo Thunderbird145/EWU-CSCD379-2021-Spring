@@ -82,8 +82,7 @@ namespace SecretSanta.Api.Controllers
             {
                 if (foundGroup.Users.FirstOrDefault(x => x.Id == userId) is { } user)
                 {
-                    foundGroup.Users.Remove(user);
-                    GroupRepository.Save(foundGroup);
+                    GroupRepository.addUser(userId, id);
                 }
                 return Ok();
             }
@@ -94,13 +93,16 @@ namespace SecretSanta.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public ActionResult Add(int id, [FromBody] int userId)
+        public ActionResult Add(int id, int userId)
         {
             Data.Group? foundGroup = GroupRepository.GetItem(id);
             Data.User? foundUser = UserRepository.GetItem(userId);
             if (foundGroup is not null && foundUser is not null)
             {
-                GroupRepository.addUser(userId, id);
+                if (!foundGroup.Users.Any(x => x.Id == foundUser.Id))
+                {
+                    GroupRepository.addUser(userId, id);
+                }
                 return Ok();
             }
             return NotFound();

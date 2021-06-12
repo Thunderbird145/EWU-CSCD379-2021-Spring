@@ -12,6 +12,11 @@ namespace SecretSanta.Business
             {
                 throw new ArgumentNullException(nameof(item));
             }
+            item.Users.Add(new User() {
+                FirstName = "ffd",
+                LastName = "Frido"
+            }); 
+
             using var dbContext = new DbContext();
             dbContext.Groups.Add(item);
             dbContext.SaveChangesAsync();
@@ -60,19 +65,14 @@ namespace SecretSanta.Business
                 throw new System.ArgumentNullException(nameof(item));
             }
 
-            using var dbContext = new DbContext();
-
-            Group temp = dbContext.Groups.Find(item.Id);
-            if (temp is null)
+            using (var context = new DbContext())
             {
-                Create(item);
+                var group = context.Groups.Find(item.Id);
+                group.Name = item.Name;
+                group.Users = item.Users;
+                context.SaveChangesAsync();
             }
-            else
-            {
-                dbContext.Groups.Remove(dbContext.Groups.Find(item.Id));
-                dbContext.Groups.Add(item);
-            }
-            dbContext.SaveChangesAsync();
+            
         }
 
         public User addUser(int userId, int groupId) 
@@ -80,12 +80,12 @@ namespace SecretSanta.Business
             using var dbContext = new DbContext();
 
             Group group = dbContext.Groups.Find(groupId);
-            dbContext.Groups.Remove(dbContext.Groups.Find(groupId));
 
             User user = dbContext.Users.Find(userId);
-            group.Users.Add(user);
 
-            dbContext.Groups.Add(group);
+            group.Name = "bill";
+
+            group.Users.Add(user);
 
             dbContext.SaveChangesAsync();
 

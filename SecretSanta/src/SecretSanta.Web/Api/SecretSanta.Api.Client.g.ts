@@ -310,7 +310,7 @@ export interface IGroupsClient {
     delete(id: number): Promise<void>;
     put(id: number, group: UpdateGroup): Promise<void>;
     remove(id: number, userId: number): Promise<void>;
-    add(id: number, userId: number): Promise<void>;
+    add(id: number, userId: number | undefined): Promise<void>;
     createAssignments(id: number): Promise<void>;
 }
 
@@ -661,21 +661,21 @@ export class GroupsClient implements IGroupsClient {
         return Promise.resolve<void>(<any>null);
     }
 
-    add(id: number, userId: number , cancelToken?: CancelToken | undefined): Promise<void> {
-        let url_ = this.baseUrl + "/api/Groups/{id}/add";
+    add(id: number, userId: number | undefined , cancelToken?: CancelToken | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/Groups/{id}/add?";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        if (userId === null)
+            throw new Error("The parameter 'userId' cannot be null.");
+        else if (userId !== undefined)
+            url_ += "userId=" + encodeURIComponent("" + userId) + "&";
         url_ = url_.replace(/[?&]$/, "");
 
-        const content_ = JSON.stringify(userId);
-
         let options_ = <AxiosRequestConfig>{
-            data: content_,
             method: "PUT",
             url: url_,
             headers: {
-                "Content-Type": "application/json",
             },
             cancelToken
         };
