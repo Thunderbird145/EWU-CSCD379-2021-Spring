@@ -2919,3 +2919,787 @@
 2021-06-11 23:10:20.497 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.8902ms
 2021-06-11 23:10:20.497 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
 2021-06-11 23:10:20.497 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups/50 - - - 200 - application/json;+charset=utf-8 2.1825ms
+2021-06-11 23:21:12.838 -07:00 [INF] Starting host
+2021-06-11 23:21:13.450 -07:00 [INF] Now listening on: https://localhost:5101
+2021-06-11 23:21:13.452 -07:00 [INF] Now listening on: http://localhost:5100
+2021-06-11 23:21:13.452 -07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-11 23:21:13.452 -07:00 [INF] Hosting environment: Development
+2021-06-11 23:21:13.452 -07:00 [INF] Content root path: D:\School\CSCD379\SecondaryBranch\SecretSanta\src\SecretSanta.Api
+2021-06-11 23:21:15.551 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:21:15.574 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:21:15.576 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:21:15.586 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:21:16.244 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:21:16.269 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 679.7877ms
+2021-06-11 23:21:16.270 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:21:16.272 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 722.3246ms
+2021-06-11 23:21:17.051 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users/60 - -
+2021-06-11 23:21:17.051 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Gifts - -
+2021-06-11 23:21:17.052 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:21:17.052 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:21:17.052 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:21:17.052 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:21:17.053 -07:00 [INF] Route matched with {action = "Get", controller = "Gifts"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Gift] Get() on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:21:17.053 -07:00 [INF] Getting all gifts
+2021-06-11 23:21:17.058 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.User] Get(Int32) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:21:17.084 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Gift, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Gift, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:21:17.086 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api) in 33.3072ms
+2021-06-11 23:21:17.087 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:21:17.087 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Gifts - - - 200 - application/json;+charset=utf-8 35.2941ms
+2021-06-11 23:21:17.126 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.User'.
+2021-06-11 23:21:17.126 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 68.0205ms
+2021-06-11 23:21:17.126 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:21:17.126 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users/60 - - - 200 - application/json;+charset=utf-8 74.9761ms
+2021-06-11 23:21:18.427 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:21:18.427 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:21:18.427 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:21:18.427 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:21:18.429 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:21:18.429 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.7717ms
+2021-06-11 23:21:18.429 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:21:18.429 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 2.3949ms
+2021-06-11 23:21:20.382 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Users/60 - -
+2021-06-11 23:21:20.382 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:21:20.383 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Users/60 - - - 204 - - 0.7356ms
+2021-06-11 23:21:20.384 -07:00 [INF] Request starting HTTP/2 DELETE https://localhost:5101/api/Users/60 - -
+2021-06-11 23:21:20.384 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:21:20.384 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Delete (SecretSanta.Api)'
+2021-06-11 23:21:20.385 -07:00 [INF] Route matched with {action = "Delete", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Delete(Int32) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:21:20.491 -07:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2021-06-11 23:21:20.491 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Delete (SecretSanta.Api) in 106.2596ms
+2021-06-11 23:21:20.491 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Delete (SecretSanta.Api)'
+2021-06-11 23:21:20.491 -07:00 [INF] Request finished HTTP/2 DELETE https://localhost:5101/api/Users/60 - - - 200 0 - 107.4707ms
+2021-06-11 23:21:20.495 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:21:20.495 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:21:20.495 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:21:20.495 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:21:20.497 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:21:20.497 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.6013ms
+2021-06-11 23:21:20.497 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:21:20.497 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 2.0376ms
+2021-06-11 23:23:31.046 -07:00 [INF] Starting host
+2021-06-11 23:23:31.659 -07:00 [INF] Now listening on: https://localhost:5101
+2021-06-11 23:23:31.662 -07:00 [INF] Now listening on: http://localhost:5100
+2021-06-11 23:23:31.662 -07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-11 23:23:31.662 -07:00 [INF] Hosting environment: Development
+2021-06-11 23:23:31.662 -07:00 [INF] Content root path: D:\School\CSCD379\SecondaryBranch\SecretSanta\src\SecretSanta.Api
+2021-06-11 23:24:57.685 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups - -
+2021-06-11 23:24:57.708 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:24:57.710 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:24:57.720 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Group] Get() on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:24:58.369 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Group, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Group, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:24:58.393 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 670.3536ms
+2021-06-11 23:24:58.394 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:24:58.395 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups - - - 200 - application/json;+charset=utf-8 712.3338ms
+2021-06-11 23:24:59.876 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Groups/49 - -
+2021-06-11 23:24:59.877 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:24:59.877 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Groups/49 - - - 204 - - 1.3916ms
+2021-06-11 23:24:59.878 -07:00 [INF] Request starting HTTP/2 DELETE https://localhost:5101/api/Groups/49 - -
+2021-06-11 23:24:59.879 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:24:59.879 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Delete (SecretSanta.Api)'
+2021-06-11 23:24:59.887 -07:00 [INF] Route matched with {action = "Delete", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Delete(Int32) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:25:00.075 -07:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2021-06-11 23:25:00.075 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Delete (SecretSanta.Api) in 188.4528ms
+2021-06-11 23:25:00.075 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Delete (SecretSanta.Api)'
+2021-06-11 23:25:00.075 -07:00 [INF] Request finished HTTP/2 DELETE https://localhost:5101/api/Groups/49 - - - 200 0 - 197.0488ms
+2021-06-11 23:25:00.081 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups - -
+2021-06-11 23:25:00.081 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:00.081 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:00.081 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Group] Get() on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:25:00.088 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Group, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Group, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:25:00.088 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 7.0519ms
+2021-06-11 23:25:00.089 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:00.089 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups - - - 200 - application/json;+charset=utf-8 7.7482ms
+2021-06-11 23:25:00.938 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups/50 - -
+2021-06-11 23:25:00.938 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:00.938 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:00.939 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Group] Get(Int32) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:25:00.943 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Group'.
+2021-06-11 23:25:00.943 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 3.9554ms
+2021-06-11 23:25:00.943 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:00.943 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups/50 - - - 200 - application/json;+charset=utf-8 5.2116ms
+2021-06-11 23:25:00.980 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:25:00.980 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:00.980 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:25:00.981 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:25:00.985 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:25:00.986 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 4.4086ms
+2021-06-11 23:25:00.986 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:25:00.986 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 5.4401ms
+2021-06-11 23:25:02.217 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups - -
+2021-06-11 23:25:02.217 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:02.217 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:02.218 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Group] Get() on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:25:02.219 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Group, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Group, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:25:02.219 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.748ms
+2021-06-11 23:25:02.219 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:02.219 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups - - - 200 - application/json;+charset=utf-8 2.2275ms
+2021-06-11 23:25:03.582 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Groups/50 - -
+2021-06-11 23:25:03.582 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:03.583 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Groups/50 - - - 204 - - 0.2648ms
+2021-06-11 23:25:03.583 -07:00 [INF] Request starting HTTP/2 DELETE https://localhost:5101/api/Groups/50 - -
+2021-06-11 23:25:03.584 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:03.584 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Delete (SecretSanta.Api)'
+2021-06-11 23:25:03.584 -07:00 [INF] Route matched with {action = "Delete", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Delete(Int32) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:25:03.624 -07:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2021-06-11 23:25:03.624 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Delete (SecretSanta.Api) in 40.2682ms
+2021-06-11 23:25:03.624 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Delete (SecretSanta.Api)'
+2021-06-11 23:25:03.624 -07:00 [INF] Request finished HTTP/2 DELETE https://localhost:5101/api/Groups/50 - - - 200 0 - 40.5941ms
+2021-06-11 23:25:03.628 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups - -
+2021-06-11 23:25:03.628 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:03.628 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:03.629 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Group] Get() on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:25:03.630 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Group, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Group, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:25:03.630 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.6108ms
+2021-06-11 23:25:03.630 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:03.630 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups - - - 200 - application/json;+charset=utf-8 1.9592ms
+2021-06-11 23:25:19.292 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Groups - -
+2021-06-11 23:25:19.292 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:19.292 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Groups - - - 204 - - 0.3583ms
+2021-06-11 23:25:19.293 -07:00 [INF] Request starting HTTP/2 POST https://localhost:5101/api/Groups application/json 16
+2021-06-11 23:25:19.293 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:19.294 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Post (SecretSanta.Api)'
+2021-06-11 23:25:19.294 -07:00 [INF] Route matched with {action = "Post", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Group] Post(SecretSanta.Api.Dto.Group) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:25:19.350 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Group'.
+2021-06-11 23:25:19.350 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Post (SecretSanta.Api) in 55.5352ms
+2021-06-11 23:25:19.350 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Post (SecretSanta.Api)'
+2021-06-11 23:25:19.350 -07:00 [INF] Request finished HTTP/2 POST https://localhost:5101/api/Groups application/json 16 - 200 - application/json;+charset=utf-8 56.6561ms
+2021-06-11 23:25:19.515 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups - -
+2021-06-11 23:25:19.515 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:19.515 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:19.515 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Group] Get() on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:25:19.517 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Group, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Group, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:25:19.517 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.6651ms
+2021-06-11 23:25:19.517 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:19.517 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups - - - 200 - application/json;+charset=utf-8 2.0056ms
+2021-06-11 23:25:20.861 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:25:20.861 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:20.861 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:25:20.861 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:25:20.863 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:25:20.863 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.7136ms
+2021-06-11 23:25:20.863 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:25:20.863 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 2.0561ms
+2021-06-11 23:25:37.467 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups - -
+2021-06-11 23:25:37.467 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:37.468 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:37.468 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Group] Get() on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:25:37.469 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Group, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Group, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:25:37.469 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.6455ms
+2021-06-11 23:25:37.469 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:37.469 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups - - - 200 - application/json;+charset=utf-8 2.0402ms
+2021-06-11 23:25:39.303 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups/51 - -
+2021-06-11 23:25:39.303 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:39.303 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:39.303 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Group] Get(Int32) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:25:39.305 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Group'.
+2021-06-11 23:25:39.305 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 2.0891ms
+2021-06-11 23:25:39.305 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:39.305 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups/51 - - - 200 - application/json;+charset=utf-8 2.4525ms
+2021-06-11 23:25:39.327 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:25:39.327 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:39.327 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:25:39.327 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:25:39.329 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:25:39.329 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 2.1982ms
+2021-06-11 23:25:39.329 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:25:39.329 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 2.5045ms
+2021-06-11 23:25:40.224 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups - -
+2021-06-11 23:25:40.224 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:40.224 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:40.224 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Group] Get() on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:25:40.226 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Group, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Group, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:25:40.226 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.6468ms
+2021-06-11 23:25:40.226 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:40.226 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups - - - 200 - application/json;+charset=utf-8 2.0467ms
+2021-06-11 23:25:46.162 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Groups - -
+2021-06-11 23:25:46.162 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:46.162 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Groups - - - 204 - - 0.1713ms
+2021-06-11 23:25:46.163 -07:00 [INF] Request starting HTTP/2 POST https://localhost:5101/api/Groups application/json 21
+2021-06-11 23:25:46.163 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:46.163 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Post (SecretSanta.Api)'
+2021-06-11 23:25:46.163 -07:00 [INF] Route matched with {action = "Post", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Group] Post(SecretSanta.Api.Dto.Group) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:25:46.197 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Group'.
+2021-06-11 23:25:46.197 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Post (SecretSanta.Api) in 34.0992ms
+2021-06-11 23:25:46.197 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Post (SecretSanta.Api)'
+2021-06-11 23:25:46.197 -07:00 [INF] Request finished HTTP/2 POST https://localhost:5101/api/Groups application/json 21 - 200 - application/json;+charset=utf-8 34.4831ms
+2021-06-11 23:25:46.301 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups - -
+2021-06-11 23:25:46.301 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:46.301 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:46.301 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Group] Get() on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:25:46.302 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Group, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Group, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:25:46.302 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.4325ms
+2021-06-11 23:25:46.302 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:25:46.302 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups - - - 200 - application/json;+charset=utf-8 1.7664ms
+2021-06-11 23:25:49.240 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:25:49.240 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:25:49.240 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:25:49.241 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:25:49.243 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:25:49.244 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 3.0535ms
+2021-06-11 23:25:49.244 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:25:49.244 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 3.3995ms
+2021-06-11 23:26:01.372 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Users - -
+2021-06-11 23:26:01.373 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:26:01.374 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Users - - - 204 - - 2.2426ms
+2021-06-11 23:26:01.375 -07:00 [INF] Request starting HTTP/2 POST https://localhost:5101/api/Users application/json 43
+2021-06-11 23:26:01.375 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:26:01.375 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Post (SecretSanta.Api)'
+2021-06-11 23:26:01.376 -07:00 [INF] Route matched with {action = "Post", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.User] Post(SecretSanta.Api.Dto.User) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:26:01.428 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.User'.
+2021-06-11 23:26:01.430 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Post (SecretSanta.Api) in 53.7721ms
+2021-06-11 23:26:01.430 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Post (SecretSanta.Api)'
+2021-06-11 23:26:01.430 -07:00 [INF] Request finished HTTP/2 POST https://localhost:5101/api/Users application/json 43 - 200 - application/json;+charset=utf-8 54.8111ms
+2021-06-11 23:26:01.567 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:26:01.567 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:26:01.567 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:26:01.567 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:26:01.568 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:26:01.569 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.7763ms
+2021-06-11 23:26:01.569 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:26:01.569 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 2.1421ms
+2021-06-11 23:26:02.479 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users/61 - -
+2021-06-11 23:26:02.479 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:26:02.479 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:26:02.480 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Gifts - -
+2021-06-11 23:26:02.481 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:26:02.481 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:26:02.482 -07:00 [INF] Route matched with {action = "Get", controller = "Gifts"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Gift] Get() on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:26:02.482 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.User] Get(Int32) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:26:02.482 -07:00 [INF] Getting all gifts
+2021-06-11 23:26:02.487 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Gift, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Gift, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:26:02.487 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api) in 4.906ms
+2021-06-11 23:26:02.487 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:26:02.487 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Gifts - - - 200 - application/json;+charset=utf-8 7.1609ms
+2021-06-11 23:26:02.493 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.User'.
+2021-06-11 23:26:02.493 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 11.3278ms
+2021-06-11 23:26:02.493 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:26:02.493 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users/61 - - - 200 - application/json;+charset=utf-8 14.4195ms
+2021-06-11 23:27:19.761 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:27:19.761 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:27:19.761 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:27:19.761 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:27:19.763 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:27:19.763 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.9427ms
+2021-06-11 23:27:19.763 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:27:19.763 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 2.2708ms
+2021-06-11 23:27:32.002 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Users/61 - -
+2021-06-11 23:27:32.002 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:27:32.002 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Users/61 - - - 204 - - 0.1958ms
+2021-06-11 23:27:32.003 -07:00 [INF] Request starting HTTP/2 DELETE https://localhost:5101/api/Users/61 - -
+2021-06-11 23:27:32.003 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:27:32.003 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Delete (SecretSanta.Api)'
+2021-06-11 23:27:32.006 -07:00 [INF] Route matched with {action = "Delete", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Delete(Int32) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:27:32.043 -07:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2021-06-11 23:27:32.043 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Delete (SecretSanta.Api) in 37.5143ms
+2021-06-11 23:27:32.043 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Delete (SecretSanta.Api)'
+2021-06-11 23:27:32.044 -07:00 [INF] Request finished HTTP/2 DELETE https://localhost:5101/api/Users/61 - - - 200 0 - 40.2336ms
+2021-06-11 23:27:32.047 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:27:32.047 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:27:32.047 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:27:32.047 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:27:32.049 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:27:32.049 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.4808ms
+2021-06-11 23:27:32.049 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:27:32.049 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 1.7691ms
+2021-06-11 23:28:20.261 -07:00 [INF] Starting host
+2021-06-11 23:28:20.835 -07:00 [INF] Now listening on: https://localhost:5101
+2021-06-11 23:28:20.837 -07:00 [INF] Now listening on: http://localhost:5100
+2021-06-11 23:28:20.837 -07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-11 23:28:20.837 -07:00 [INF] Hosting environment: Development
+2021-06-11 23:28:20.837 -07:00 [INF] Content root path: D:\School\CSCD379\SecondaryBranch\SecretSanta\src\SecretSanta.Api
+2021-06-11 23:28:32.708 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups - -
+2021-06-11 23:28:32.731 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:28:32.733 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:28:32.743 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Group] Get() on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:28:33.394 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Group, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Group, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:28:33.420 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 674.0099ms
+2021-06-11 23:28:33.421 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:28:33.423 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups - - - 200 - application/json;+charset=utf-8 716.5497ms
+2021-06-11 23:28:40.231 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Groups - -
+2021-06-11 23:28:40.232 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:28:40.232 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Groups - - - 204 - - 1.2442ms
+2021-06-11 23:28:40.235 -07:00 [INF] Request starting HTTP/2 POST https://localhost:5101/api/Groups application/json 21
+2021-06-11 23:28:40.235 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:28:40.235 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Post (SecretSanta.Api)'
+2021-06-11 23:28:40.241 -07:00 [INF] Route matched with {action = "Post", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Group] Post(SecretSanta.Api.Dto.Group) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:28:40.397 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Group'.
+2021-06-11 23:28:40.397 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Post (SecretSanta.Api) in 156.4445ms
+2021-06-11 23:28:40.397 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Post (SecretSanta.Api)'
+2021-06-11 23:28:40.397 -07:00 [INF] Request finished HTTP/2 POST https://localhost:5101/api/Groups application/json 21 - 200 - application/json;+charset=utf-8 162.6883ms
+2021-06-11 23:28:40.486 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups - -
+2021-06-11 23:28:40.486 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:28:40.486 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:28:40.486 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Group] Get() on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:28:40.493 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Group, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Group, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:28:40.493 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 6.996ms
+2021-06-11 23:28:40.493 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:28:40.493 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups - - - 200 - application/json;+charset=utf-8 7.4326ms
+2021-06-11 23:28:41.630 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:28:41.630 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:28:41.630 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:28:41.630 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:28:41.635 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:28:41.635 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 4.8676ms
+2021-06-11 23:28:41.635 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:28:41.635 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 5.9004ms
+2021-06-11 23:28:51.399 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Users - -
+2021-06-11 23:28:51.399 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:28:51.399 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Users - - - 204 - - 0.2543ms
+2021-06-11 23:28:51.400 -07:00 [INF] Request starting HTTP/2 POST https://localhost:5101/api/Users application/json 35
+2021-06-11 23:28:51.400 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:28:51.400 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Post (SecretSanta.Api)'
+2021-06-11 23:28:51.401 -07:00 [INF] Route matched with {action = "Post", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.User] Post(SecretSanta.Api.Dto.User) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:28:51.458 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.User'.
+2021-06-11 23:28:51.459 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Post (SecretSanta.Api) in 58.5513ms
+2021-06-11 23:28:51.459 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Post (SecretSanta.Api)'
+2021-06-11 23:28:51.459 -07:00 [INF] Request finished HTTP/2 POST https://localhost:5101/api/Users application/json 35 - 200 - application/json;+charset=utf-8 59.7359ms
+2021-06-11 23:28:51.589 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:28:51.589 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:28:51.589 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:28:51.589 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:28:51.591 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:28:51.592 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 2.2862ms
+2021-06-11 23:28:51.592 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:28:51.592 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 2.6773ms
+2021-06-11 23:28:55.999 -07:00 [INF] Request starting HTTP/2 POST https://localhost:5101/api/Users application/json 35
+2021-06-11 23:28:55.999 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:28:55.999 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Post (SecretSanta.Api)'
+2021-06-11 23:28:55.999 -07:00 [INF] Route matched with {action = "Post", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.User] Post(SecretSanta.Api.Dto.User) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:28:56.021 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.User'.
+2021-06-11 23:28:56.022 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Post (SecretSanta.Api) in 22.3206ms
+2021-06-11 23:28:56.022 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Post (SecretSanta.Api)'
+2021-06-11 23:28:56.022 -07:00 [INF] Request finished HTTP/2 POST https://localhost:5101/api/Users application/json 35 - 200 - application/json;+charset=utf-8 22.6600ms
+2021-06-11 23:28:56.125 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:28:56.125 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:28:56.125 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:28:56.125 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:28:56.127 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:28:56.127 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.7606ms
+2021-06-11 23:28:56.127 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:28:56.127 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 2.0766ms
+2021-06-11 23:29:06.061 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Users - -
+2021-06-11 23:29:06.061 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:06.062 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Users - - - 204 - - 0.2093ms
+2021-06-11 23:29:06.062 -07:00 [INF] Request starting HTTP/2 POST https://localhost:5101/api/Users application/json 46
+2021-06-11 23:29:06.062 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:06.062 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Post (SecretSanta.Api)'
+2021-06-11 23:29:06.062 -07:00 [INF] Route matched with {action = "Post", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.User] Post(SecretSanta.Api.Dto.User) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:29:06.096 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.User'.
+2021-06-11 23:29:06.096 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Post (SecretSanta.Api) in 33.6069ms
+2021-06-11 23:29:06.096 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Post (SecretSanta.Api)'
+2021-06-11 23:29:06.096 -07:00 [INF] Request finished HTTP/2 POST https://localhost:5101/api/Users application/json 46 - 200 - application/json;+charset=utf-8 34.0102ms
+2021-06-11 23:29:06.158 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:29:06.158 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:06.158 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:29:06.158 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:29:06.159 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:29:06.160 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.6446ms
+2021-06-11 23:29:06.160 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:29:06.160 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 2.0539ms
+2021-06-11 23:29:09.932 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users/62 - -
+2021-06-11 23:29:09.932 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Gifts - -
+2021-06-11 23:29:09.932 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:09.932 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:09.932 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:29:09.932 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:29:09.933 -07:00 [INF] Route matched with {action = "Get", controller = "Gifts"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Gift] Get() on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:29:09.933 -07:00 [INF] Getting all gifts
+2021-06-11 23:29:09.933 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.User] Get(Int32) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:29:09.938 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Gift, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Gift, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:29:09.938 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api) in 5.1228ms
+2021-06-11 23:29:09.938 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:29:09.939 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Gifts - - - 200 - application/json;+charset=utf-8 6.0169ms
+2021-06-11 23:29:09.982 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.User'.
+2021-06-11 23:29:09.982 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 48.9612ms
+2021-06-11 23:29:09.982 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:29:09.982 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users/62 - - - 200 - application/json;+charset=utf-8 50.5031ms
+2021-06-11 23:29:24.319 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Gifts - -
+2021-06-11 23:29:24.319 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:24.319 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Gifts - - - 204 - - 0.3115ms
+2021-06-11 23:29:24.320 -07:00 [INF] Request starting HTTP/2 POST https://localhost:5101/api/Gifts application/json 69
+2021-06-11 23:29:24.320 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:24.320 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api)'
+2021-06-11 23:29:24.321 -07:00 [INF] Route matched with {action = "Post", controller = "Gifts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Gift] Post(SecretSanta.Api.Dto.Gift) on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:29:24.373 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Gift'.
+2021-06-11 23:29:24.374 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api) in 52.7836ms
+2021-06-11 23:29:24.374 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api)'
+2021-06-11 23:29:24.374 -07:00 [INF] Request finished HTTP/2 POST https://localhost:5101/api/Gifts application/json 69 - 200 - application/json;+charset=utf-8 53.6995ms
+2021-06-11 23:29:24.504 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Gifts - -
+2021-06-11 23:29:24.504 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users/62 - -
+2021-06-11 23:29:24.504 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:24.505 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:24.505 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:29:24.505 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:29:24.505 -07:00 [INF] Route matched with {action = "Get", controller = "Gifts"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Gift] Get() on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:29:24.505 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.User] Get(Int32) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:29:24.505 -07:00 [INF] Getting all gifts
+2021-06-11 23:29:24.506 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Gift, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Gift, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:29:24.507 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api) in 2.2571ms
+2021-06-11 23:29:24.507 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:29:24.507 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Gifts - - - 200 - application/json;+charset=utf-8 2.6882ms
+2021-06-11 23:29:24.508 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.User'.
+2021-06-11 23:29:24.508 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 3.741ms
+2021-06-11 23:29:24.508 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:29:24.508 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users/62 - - - 200 - application/json;+charset=utf-8 4.0476ms
+2021-06-11 23:29:46.008 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Gifts - -
+2021-06-11 23:29:46.009 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:46.009 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Gifts - - - 204 - - 0.3321ms
+2021-06-11 23:29:46.012 -07:00 [INF] Request starting HTTP/2 POST https://localhost:5101/api/Gifts application/json 104
+2021-06-11 23:29:46.012 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:46.012 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api)'
+2021-06-11 23:29:46.012 -07:00 [INF] Route matched with {action = "Post", controller = "Gifts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Gift] Post(SecretSanta.Api.Dto.Gift) on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:29:46.055 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Gift'.
+2021-06-11 23:29:46.055 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api) in 43.223ms
+2021-06-11 23:29:46.055 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api)'
+2021-06-11 23:29:46.055 -07:00 [INF] Request finished HTTP/2 POST https://localhost:5101/api/Gifts application/json 104 - 200 - application/json;+charset=utf-8 43.6286ms
+2021-06-11 23:29:46.221 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Gifts - -
+2021-06-11 23:29:46.221 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users/62 - -
+2021-06-11 23:29:46.221 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:46.221 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:29:46.221 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:46.221 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:29:46.221 -07:00 [INF] Route matched with {action = "Get", controller = "Gifts"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Gift] Get() on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:29:46.221 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.User] Get(Int32) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:29:46.221 -07:00 [INF] Getting all gifts
+2021-06-11 23:29:46.223 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Gift, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Gift, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:29:46.223 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api) in 1.586ms
+2021-06-11 23:29:46.223 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:29:46.223 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Gifts - - - 200 - application/json;+charset=utf-8 2.0888ms
+2021-06-11 23:29:46.223 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.User'.
+2021-06-11 23:29:46.223 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.8546ms
+2021-06-11 23:29:46.223 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:29:46.223 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users/62 - - - 200 - application/json;+charset=utf-8 2.2082ms
+2021-06-11 23:29:48.971 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:29:48.972 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:48.972 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:29:48.972 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:29:48.973 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:29:48.973 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.6529ms
+2021-06-11 23:29:48.973 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:29:48.973 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 2.0095ms
+2021-06-11 23:29:49.845 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users/63 - -
+2021-06-11 23:29:49.845 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Gifts - -
+2021-06-11 23:29:49.845 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:49.845 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:29:49.845 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:29:49.845 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:29:49.845 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.User] Get(Int32) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:29:49.845 -07:00 [INF] Route matched with {action = "Get", controller = "Gifts"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Gift] Get() on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:29:49.845 -07:00 [INF] Getting all gifts
+2021-06-11 23:29:49.847 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Gift, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Gift, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:29:49.847 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api) in 1.6666ms
+2021-06-11 23:29:49.847 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:29:49.847 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.User'.
+2021-06-11 23:29:49.847 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Gifts - - - 200 - application/json;+charset=utf-8 1.9560ms
+2021-06-11 23:29:49.847 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.8469ms
+2021-06-11 23:29:49.847 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:29:49.847 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users/63 - - - 200 - application/json;+charset=utf-8 2.2812ms
+2021-06-11 23:30:06.342 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Gifts - -
+2021-06-11 23:30:06.342 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:06.342 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Gifts - - - 204 - - 0.3272ms
+2021-06-11 23:30:06.343 -07:00 [INF] Request starting HTTP/2 POST https://localhost:5101/api/Gifts application/json 113
+2021-06-11 23:30:06.343 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:06.343 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api)'
+2021-06-11 23:30:06.343 -07:00 [INF] Route matched with {action = "Post", controller = "Gifts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Gift] Post(SecretSanta.Api.Dto.Gift) on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:30:06.379 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Gift'.
+2021-06-11 23:30:06.379 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api) in 36.4828ms
+2021-06-11 23:30:06.379 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api)'
+2021-06-11 23:30:06.379 -07:00 [INF] Request finished HTTP/2 POST https://localhost:5101/api/Gifts application/json 113 - 200 - application/json;+charset=utf-8 36.8134ms
+2021-06-11 23:30:06.562 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Gifts - -
+2021-06-11 23:30:06.562 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users/63 - -
+2021-06-11 23:30:06.563 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:06.563 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:06.563 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:30:06.563 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:30:06.563 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.User] Get(Int32) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:30:06.563 -07:00 [INF] Route matched with {action = "Get", controller = "Gifts"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Gift] Get() on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:30:06.563 -07:00 [INF] Getting all gifts
+2021-06-11 23:30:06.564 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Gift, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Gift, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:30:06.564 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.User'.
+2021-06-11 23:30:06.564 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api) in 1.7202ms
+2021-06-11 23:30:06.564 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.7694ms
+2021-06-11 23:30:06.564 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:30:06.564 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:30:06.565 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users/63 - - - 200 - application/json;+charset=utf-8 2.0957ms
+2021-06-11 23:30:06.565 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Gifts - - - 200 - application/json;+charset=utf-8 2.2289ms
+2021-06-11 23:30:19.129 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Gifts - -
+2021-06-11 23:30:19.129 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:19.129 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Gifts - - - 204 - - 0.2073ms
+2021-06-11 23:30:19.130 -07:00 [INF] Request starting HTTP/2 POST https://localhost:5101/api/Gifts application/json 112
+2021-06-11 23:30:19.130 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:19.130 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api)'
+2021-06-11 23:30:19.130 -07:00 [INF] Route matched with {action = "Post", controller = "Gifts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Gift] Post(SecretSanta.Api.Dto.Gift) on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:30:19.170 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Gift'.
+2021-06-11 23:30:19.170 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api) in 40.758ms
+2021-06-11 23:30:19.171 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api)'
+2021-06-11 23:30:19.171 -07:00 [INF] Request finished HTTP/2 POST https://localhost:5101/api/Gifts application/json 112 - 200 - application/json;+charset=utf-8 41.0819ms
+2021-06-11 23:30:19.319 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Gifts - -
+2021-06-11 23:30:19.319 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users/63 - -
+2021-06-11 23:30:19.319 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:19.319 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:19.319 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:30:19.319 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:30:19.319 -07:00 [INF] Route matched with {action = "Get", controller = "Gifts"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Gift] Get() on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:30:19.319 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.User] Get(Int32) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:30:19.319 -07:00 [INF] Getting all gifts
+2021-06-11 23:30:19.321 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Gift, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Gift, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:30:19.321 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api) in 1.6936ms
+2021-06-11 23:30:19.321 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:30:19.321 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Gifts - - - 200 - application/json;+charset=utf-8 2.0367ms
+2021-06-11 23:30:19.321 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.User'.
+2021-06-11 23:30:19.321 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 2.0089ms
+2021-06-11 23:30:19.321 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:30:19.321 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users/63 - - - 200 - application/json;+charset=utf-8 2.3715ms
+2021-06-11 23:30:20.999 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:30:20.999 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:21.000 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:30:21.000 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:30:21.001 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:30:21.001 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.7069ms
+2021-06-11 23:30:21.001 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:30:21.001 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 2.0236ms
+2021-06-11 23:30:21.886 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users/64 - -
+2021-06-11 23:30:21.886 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Gifts - -
+2021-06-11 23:30:21.886 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:21.886 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:21.886 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:30:21.886 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:30:21.886 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.User] Get(Int32) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:30:21.886 -07:00 [INF] Route matched with {action = "Get", controller = "Gifts"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Gift] Get() on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:30:21.886 -07:00 [INF] Getting all gifts
+2021-06-11 23:30:21.887 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Gift, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Gift, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:30:21.887 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.User'.
+2021-06-11 23:30:21.887 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api) in 1.7021ms
+2021-06-11 23:30:21.887 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.7595ms
+2021-06-11 23:30:21.887 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:30:21.888 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:30:21.888 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Gifts - - - 200 - application/json;+charset=utf-8 2.0555ms
+2021-06-11 23:30:21.888 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users/64 - - - 200 - application/json;+charset=utf-8 2.2350ms
+2021-06-11 23:30:41.222 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Gifts - -
+2021-06-11 23:30:41.222 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:41.222 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Gifts - - - 204 - - 0.2434ms
+2021-06-11 23:30:41.223 -07:00 [INF] Request starting HTTP/2 POST https://localhost:5101/api/Gifts application/json 98
+2021-06-11 23:30:41.223 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:41.223 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api)'
+2021-06-11 23:30:41.223 -07:00 [INF] Route matched with {action = "Post", controller = "Gifts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Gift] Post(SecretSanta.Api.Dto.Gift) on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:30:41.261 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Gift'.
+2021-06-11 23:30:41.261 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api) in 38.5055ms
+2021-06-11 23:30:41.262 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api)'
+2021-06-11 23:30:41.262 -07:00 [INF] Request finished HTTP/2 POST https://localhost:5101/api/Gifts application/json 98 - 200 - application/json;+charset=utf-8 38.9093ms
+2021-06-11 23:30:41.410 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Gifts - -
+2021-06-11 23:30:41.410 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users/64 - -
+2021-06-11 23:30:41.410 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:41.410 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:30:41.410 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:41.410 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:30:41.410 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.User] Get(Int32) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:30:41.410 -07:00 [INF] Route matched with {action = "Get", controller = "Gifts"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Gift] Get() on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:30:41.410 -07:00 [INF] Getting all gifts
+2021-06-11 23:30:41.412 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.User'.
+2021-06-11 23:30:41.412 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 2.0129ms
+2021-06-11 23:30:41.412 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:30:41.412 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users/64 - - - 200 - application/json;+charset=utf-8 2.2775ms
+2021-06-11 23:30:41.428 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Gift, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Gift, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:30:41.428 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api) in 18.0121ms
+2021-06-11 23:30:41.428 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:30:41.428 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Gifts - - - 200 - application/json;+charset=utf-8 18.5457ms
+2021-06-11 23:30:55.496 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Gifts - -
+2021-06-11 23:30:55.496 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:55.496 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Gifts - - - 204 - - 0.2735ms
+2021-06-11 23:30:55.497 -07:00 [INF] Request starting HTTP/2 POST https://localhost:5101/api/Gifts application/json 117
+2021-06-11 23:30:55.497 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:55.497 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api)'
+2021-06-11 23:30:55.497 -07:00 [INF] Route matched with {action = "Post", controller = "Gifts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Gift] Post(SecretSanta.Api.Dto.Gift) on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:30:55.527 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Gift'.
+2021-06-11 23:30:55.528 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api) in 30.4678ms
+2021-06-11 23:30:55.528 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Post (SecretSanta.Api)'
+2021-06-11 23:30:55.528 -07:00 [INF] Request finished HTTP/2 POST https://localhost:5101/api/Gifts application/json 117 - 200 - application/json;+charset=utf-8 30.7653ms
+2021-06-11 23:30:55.666 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Gifts - -
+2021-06-11 23:30:55.666 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users/64 - -
+2021-06-11 23:30:55.666 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:55.666 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:55.666 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:30:55.666 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:30:55.667 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.User] Get(Int32) on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:30:55.667 -07:00 [INF] Route matched with {action = "Get", controller = "Gifts"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Gift] Get() on controller SecretSanta.Api.Controllers.GiftsController (SecretSanta.Api).
+2021-06-11 23:30:55.667 -07:00 [INF] Getting all gifts
+2021-06-11 23:30:55.668 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Gift, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Gift, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:30:55.668 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api) in 1.6727ms
+2021-06-11 23:30:55.668 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GiftsController.Get (SecretSanta.Api)'
+2021-06-11 23:30:55.668 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Gifts - - - 200 - application/json;+charset=utf-8 2.1240ms
+2021-06-11 23:30:55.668 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.User'.
+2021-06-11 23:30:55.668 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.8127ms
+2021-06-11 23:30:55.668 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:30:55.668 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users/64 - - - 200 - application/json;+charset=utf-8 2.0895ms
+2021-06-11 23:30:56.780 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:30:56.780 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:30:56.780 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:30:56.780 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:30:56.782 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:30:56.782 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.7987ms
+2021-06-11 23:30:56.782 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:30:56.782 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 2.1414ms
+2021-06-11 23:31:04.935 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups - -
+2021-06-11 23:31:04.935 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:04.935 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:04.935 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Group] Get() on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:31:04.936 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Group, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Group, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:31:04.937 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.429ms
+2021-06-11 23:31:04.937 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:04.937 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups - - - 200 - application/json;+charset=utf-8 1.6556ms
+2021-06-11 23:31:06.076 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups/53 - -
+2021-06-11 23:31:06.076 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:06.076 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:06.077 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Group] Get(Int32) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:31:06.082 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Group'.
+2021-06-11 23:31:06.082 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 4.8829ms
+2021-06-11 23:31:06.082 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:06.082 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups/53 - - - 200 - application/json;+charset=utf-8 6.0919ms
+2021-06-11 23:31:06.089 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:31:06.089 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:06.089 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:31:06.089 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:31:06.091 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:31:06.091 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.6678ms
+2021-06-11 23:31:06.091 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:31:06.091 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 2.0622ms
+2021-06-11 23:31:07.183 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups - -
+2021-06-11 23:31:07.183 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:07.183 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:07.183 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Group] Get() on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:31:07.185 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Group, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Group, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:31:07.185 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.6702ms
+2021-06-11 23:31:07.185 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:07.185 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups - - - 200 - application/json;+charset=utf-8 2.0360ms
+2021-06-11 23:31:07.653 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups/52 - -
+2021-06-11 23:31:07.653 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:07.653 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:07.653 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Group] Get(Int32) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:31:07.655 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Group'.
+2021-06-11 23:31:07.655 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.9935ms
+2021-06-11 23:31:07.655 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:07.655 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups/52 - - - 200 - application/json;+charset=utf-8 2.3021ms
+2021-06-11 23:31:07.664 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:31:07.664 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:07.664 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:31:07.664 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:31:07.665 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:31:07.665 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.5944ms
+2021-06-11 23:31:07.665 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:31:07.666 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 1.9635ms
+2021-06-11 23:31:08.557 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups - -
+2021-06-11 23:31:08.557 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:08.557 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:08.557 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Group] Get() on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:31:08.559 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Group, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Group, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:31:08.559 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.339ms
+2021-06-11 23:31:08.559 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:08.559 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups - - - 200 - application/json;+charset=utf-8 1.6762ms
+2021-06-11 23:31:09.270 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups/51 - -
+2021-06-11 23:31:09.270 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:09.270 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:09.270 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Group] Get(Int32) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:31:09.272 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Group'.
+2021-06-11 23:31:09.272 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 2.1114ms
+2021-06-11 23:31:09.273 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:09.273 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups/51 - - - 200 - application/json;+charset=utf-8 2.3882ms
+2021-06-11 23:31:09.282 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:31:09.282 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:09.282 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:31:09.282 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:31:09.284 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:31:09.284 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.5014ms
+2021-06-11 23:31:09.284 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:31:09.284 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 1.8175ms
+2021-06-11 23:31:09.953 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups - -
+2021-06-11 23:31:09.953 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:09.953 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:09.953 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Group] Get() on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:31:09.955 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Group, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Group, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:31:09.955 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.6186ms
+2021-06-11 23:31:09.955 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:09.955 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups - - - 200 - application/json;+charset=utf-8 1.9444ms
+2021-06-11 23:31:11.540 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups/52 - -
+2021-06-11 23:31:11.540 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:11.540 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:11.540 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Group] Get(Int32) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:31:11.542 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Group'.
+2021-06-11 23:31:11.542 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.9322ms
+2021-06-11 23:31:11.542 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:11.542 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups/52 - - - 200 - application/json;+charset=utf-8 2.2288ms
+2021-06-11 23:31:11.551 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:31:11.551 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:11.551 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:31:11.551 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:31:11.552 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:31:11.552 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.3515ms
+2021-06-11 23:31:11.552 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:31:11.552 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 1.6774ms
+2021-06-11 23:31:12.167 -07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5101/api/Groups/52/assign - -
+2021-06-11 23:31:12.167 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:12.167 -07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5101/api/Groups/52/assign - - - 204 - - 0.3444ms
+2021-06-11 23:31:12.168 -07:00 [INF] Request starting HTTP/2 PUT https://localhost:5101/api/Groups/52/assign - 0
+2021-06-11 23:31:12.169 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:12.169 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.CreateAssignments (SecretSanta.Api)'
+2021-06-11 23:31:12.171 -07:00 [INF] Route matched with {action = "CreateAssignments", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult CreateAssignments(Int32) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:31:12.173 -07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2021-06-11 23:31:12.173 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.CreateAssignments (SecretSanta.Api) in 2.0968ms
+2021-06-11 23:31:12.173 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.CreateAssignments (SecretSanta.Api)'
+2021-06-11 23:31:12.173 -07:00 [INF] Request finished HTTP/2 PUT https://localhost:5101/api/Groups/52/assign - 0 - 400 - text/plain;+charset=utf-8 4.9084ms
+2021-06-11 23:31:12.176 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups/52 - -
+2021-06-11 23:31:12.176 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:12.176 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:12.176 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Group] Get(Int32) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:31:12.178 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Group'.
+2021-06-11 23:31:12.178 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.9939ms
+2021-06-11 23:31:12.179 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:12.179 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups/52 - - - 200 - application/json;+charset=utf-8 2.2617ms
+2021-06-11 23:31:12.823 -07:00 [INF] Request starting HTTP/2 PUT https://localhost:5101/api/Groups/52/assign - 0
+2021-06-11 23:31:12.823 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:12.823 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.CreateAssignments (SecretSanta.Api)'
+2021-06-11 23:31:12.823 -07:00 [INF] Route matched with {action = "CreateAssignments", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult CreateAssignments(Int32) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:31:12.823 -07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2021-06-11 23:31:12.823 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.CreateAssignments (SecretSanta.Api) in 0.2037ms
+2021-06-11 23:31:12.823 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.CreateAssignments (SecretSanta.Api)'
+2021-06-11 23:31:12.823 -07:00 [INF] Request finished HTTP/2 PUT https://localhost:5101/api/Groups/52/assign - 0 - 400 - text/plain;+charset=utf-8 0.4739ms
+2021-06-11 23:31:12.826 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups/52 - -
+2021-06-11 23:31:12.827 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:12.827 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:12.827 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Group] Get(Int32) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:31:12.828 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Group'.
+2021-06-11 23:31:12.828 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.7275ms
+2021-06-11 23:31:12.829 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:12.829 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups/52 - - - 200 - application/json;+charset=utf-8 2.0674ms
+2021-06-11 23:31:12.980 -07:00 [INF] Request starting HTTP/2 PUT https://localhost:5101/api/Groups/52/assign - 0
+2021-06-11 23:31:12.980 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:12.980 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.CreateAssignments (SecretSanta.Api)'
+2021-06-11 23:31:12.980 -07:00 [INF] Route matched with {action = "CreateAssignments", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult CreateAssignments(Int32) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:31:12.981 -07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2021-06-11 23:31:12.981 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.CreateAssignments (SecretSanta.Api) in 0.1597ms
+2021-06-11 23:31:12.981 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.CreateAssignments (SecretSanta.Api)'
+2021-06-11 23:31:12.981 -07:00 [INF] Request finished HTTP/2 PUT https://localhost:5101/api/Groups/52/assign - 0 - 400 - text/plain;+charset=utf-8 0.4410ms
+2021-06-11 23:31:12.983 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups/52 - -
+2021-06-11 23:31:12.983 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:12.983 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:12.983 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SecretSanta.Api.Dto.Group] Get(Int32) on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:31:12.985 -07:00 [INF] Executing ObjectResult, writing value of type 'SecretSanta.Api.Dto.Group'.
+2021-06-11 23:31:12.985 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.8832ms
+2021-06-11 23:31:12.985 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:12.985 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups/52 - - - 200 - application/json;+charset=utf-8 2.1502ms
+2021-06-11 23:31:14.401 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Groups - -
+2021-06-11 23:31:14.401 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:31:14.401 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:14.401 -07:00 [INF] Route matched with {action = "Get", controller = "Groups"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.Group] Get() on controller SecretSanta.Api.Controllers.GroupsController (SecretSanta.Api).
+2021-06-11 23:31:14.402 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.Group, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.Group, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:31:14.402 -07:00 [INF] Executed action SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api) in 1.4186ms
+2021-06-11 23:31:14.402 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.GroupsController.Get (SecretSanta.Api)'
+2021-06-11 23:31:14.402 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Groups - - - 200 - application/json;+charset=utf-8 1.7133ms
+2021-06-11 23:32:58.408 -07:00 [INF] Request starting HTTP/2 GET https://localhost:5101/api/Users - -
+2021-06-11 23:32:58.408 -07:00 [INF] CORS policy execution successful.
+2021-06-11 23:32:58.408 -07:00 [INF] Executing endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:32:58.408 -07:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SecretSanta.Api.Dto.User] Get() on controller SecretSanta.Api.Controllers.UsersController (SecretSanta.Api).
+2021-06-11 23:32:58.410 -07:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SecretSanta.Data.User, SecretSanta.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SecretSanta.Api.Dto.User, SecretSanta.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-11 23:32:58.410 -07:00 [INF] Executed action SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api) in 1.5691ms
+2021-06-11 23:32:58.410 -07:00 [INF] Executed endpoint 'SecretSanta.Api.Controllers.UsersController.Get (SecretSanta.Api)'
+2021-06-11 23:32:58.410 -07:00 [INF] Request finished HTTP/2 GET https://localhost:5101/api/Users - - - 200 - application/json;+charset=utf-8 1.8581ms
